@@ -29,7 +29,7 @@ function RegisterForm() {
       )}
       <div>
         <label htmlFor="username">
-          Username:
+          
           <input
             type="text"
             name="username"
@@ -37,11 +37,12 @@ function RegisterForm() {
             required
             onChange={(event) => setUsername(event.target.value)}
           />
+          Username
         </label>
       </div>
       <div>
         <label htmlFor="password">
-          Password:
+          
           <input
             type="password"
             name="password"
@@ -49,6 +50,7 @@ function RegisterForm() {
             required
             onChange={(event) => setPassword(event.target.value)}
           />
+          Password
         </label>
       </div>
       <div>
