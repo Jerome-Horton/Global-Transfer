@@ -46,7 +46,7 @@ function HomePageForm() {
                     </label>
                         
 
-                        <input list="countries" type="text" value={country} name="receiverCountry" placeholder="Receiver Country"/></label>
+                        <input list="countries" type="text" value={country} name="receiverCountry" placeholder="Receiver Country"/>                    
 
                             <datalist id="countries">
                                 <option value="Afganistan">Afghanistan</option>
