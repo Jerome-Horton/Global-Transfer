@@ -4,6 +4,9 @@ import Button from '@mui/material/Button';
 // import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 
+import Header from '../Header/Header';
+import'./success.css'
+
 
 function SuccessPage (props) {
 
@@ -11,6 +14,8 @@ function SuccessPage (props) {
 
         <div>
         
+            <Header />
+
             <Container className='white-container' maxWidth="xl">
                 <h1 className='success'>Success!</h1>
                 <h1 className='complete'>Your Money Transfer Is <br /> Complete </h1>

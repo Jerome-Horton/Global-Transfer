@@ -5,6 +5,8 @@ import IconButton from '@material-ui/core/IconButton';
 import { IconFlagUS } from 'material-ui-flags';
 import Button from '@mui/material/Button';
 
+import './Header.css'
+
 
 const Header = () => {
     return (

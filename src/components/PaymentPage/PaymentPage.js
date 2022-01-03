@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from '../Header/Header';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -10,6 +11,7 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import Button from '@mui/material/Button';
 
 
+
 function payment () {
 
         const [expDate, setExpDate] = useState(null);
@@ -17,6 +19,9 @@ function payment () {
     return (
 
         <div>
+           
+            <Header />
+
             <Grid container item lg={3} sm={6} xs={12} >
 
                 <Box style={{ marginLeft: "15em", marginTop: "0.5em" }}
