@@ -1,0 +1,12 @@
+.Appbar-1 {
+
+    background-color: darkgreen;
+    
+    
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+        grid-gap: 1rem;
+        position:relative;
+      }
