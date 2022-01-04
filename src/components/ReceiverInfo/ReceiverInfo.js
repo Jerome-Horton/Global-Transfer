@@ -51,7 +51,7 @@ function ReceiverPage () {
           
                 <Grid item xs={12} md={6}>
                     <div className='receiver-btn-container'>
-                        <Button className='receiver-info-btn' onClick={()=>cardInfo()} variant="contained">Next</Button>
+                        <Button className='receiver-info-btn' onClick={()=>PaymentInfo()} variant="contained">Next</Button>
                     </div>
                 </Grid>
      
