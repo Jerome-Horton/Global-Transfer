@@ -1,0 +1,104 @@
+.white-container-track{
+    background-color: white;
+    width: 80% !important;
+    margin-top: 30px;
+    height: 60vh;
+    text-align: center;
+    padding: 0px !important;
+}
+
+.nav-grid-track{
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    justify-content: center;
+}
+.send-link{
+    color: white !important;
+    text-decoration: underline !important;
+    cursor: pointer;
+
+}
+.input-field-1{
+    font-size: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 78%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.input-field-1::placeholder{
+    color: rgb(207, 207, 207);
+}
+.input-field{
+    font-size: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.input-fields{
+    font-size: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 100%;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.input-field::placeholder{
+    color: rgb(207, 207, 207);
+}
+
+.usd-name{
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+    width: 50%;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    color: black !important;
+    border: none !important;
+    font-size: 28px !important;
+    font-weight: 600;
+    background-color: white !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.MuiTabs-indicator {
+    display: none;
+  }
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+    font-weight: 600 !important;
+    font-size: 28px !important;
+    background-color: #cfcccc !important; 
+}
+
+.estimate-btn{
+    font-weight: 500 !important;
+    background-color: rgb(136, 136, 136) !important;
+    margin-top: 20px !important;
+    font-size: 28px !important;
+    float: right;
+}
+
+.track-btn{
+    font-weight: 600 !important;
+    background-color: red !important;
+    margin-top: 20px !important;
+    font-size: 25px !important;
+    float: right;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
