@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 
 
-function fraudPage () {
+function FraudPage () {
 
     return (
 
@@ -35,3 +35,5 @@ function fraudPage () {
 
     )
 }
+
+export default FraudPage;
