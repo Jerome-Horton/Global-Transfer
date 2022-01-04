@@ -1,92 +1,86 @@
 import React, { useState } from 'react';
 import Header from '../Header/Header';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import DatePicker from '@mui/lab/DatePicker';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+// import DatePicker from '@mui/lab/DatePicker';
+// import AdapterDateFns from '@mui/lab/AdapterDateFns';
+// import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import Button from '@mui/material/Button';
+
+// import { useNavigate } from 'react-router';
+
 
 
 
 function payment () {
 
-        const [expDate, setExpDate] = useState(null);
+    //     const [expDate, setExpDate] = useState(null);
+
+    //     <Grid item lg={6} xs={12}>
+    //     <LocalizationProvider dateAdapter={AdapterDateFns}>
+    //         <DatePicker
+
+    //             value={expDate}
+    //             onChange={(e) => { setExpDate(e) }}
+    //             renderInput={(params) => <TextField {...params} required variant="standard" id="exp-date" label="Enter Expiry Date" />}
+    //         />
+    //     </LocalizationProvider>
+    // </Grid>
+
+    //navigation to fraudPage
+    // function fraudPage() {
+    //     navigate('/fraudPage')
+    //   }
 
     return (
 
         <div>
-           
+
             <Header />
 
-            <Grid container item lg={3} sm={6} xs={12} >
+            <Container className='white-container-card' maxWidth="xl">
+                    <p className='sender-info-text'>Payment Information</p>
+                    <div className='center-text-card'>Add Your Card Information</div>
 
-                <Box style={{ marginLeft: "15em", marginTop: "0.5em" }}
-                    sx={{
-                        display: 'flex', justifyContent: 'center', alignItems: 'center',
-                        '& > :not(style)': {
-                            m: 1,
-                            width: '65em',
-                            height: 500,
-                        },
-                    }}
-                >
-                    <Paper variant="outlined" lg={12}>
-                        <Grid container style={{ marginTop: "2em", marginLeft: "3em" }} lg={12}>
-                            <Grid item style={{ marginLeft: '23em' }} xs={12} >
-                                <Typography variant="h6" > Add Card Information</Typography>
-                            </Grid>
+                    <Grid className='grid-card' container spacing={2}>
+                    <Grid item xs={12} md={6} >
+                        <input className='card-input-info' placeholder='Card Number' type="text" />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <input className='card-input-info' placeholder='EXPIRATION MM/YY' type="text" />
+                    </Grid>
 
+                    </Grid>
+                    <Grid className='grid-card' container spacing={2}>
+                    <Grid item xs={12} md={6} >
+                        <input className='card-input-info' placeholder='Billing Address' type="text" />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <input className='card-input-info' placeholder='CVV' type="text" />
+                    </Grid>
 
+                    </Grid>
+                    <Grid className='grid-card' container spacing={2}>
+                    <Grid item xs={12} md={6} >
+                        <input className='card-input-info' placeholder='Billing Address' type="text" />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <input className='card-input-info' placeholder='Phone Number' type="text" />
+                    </Grid>
 
-                        </Grid>
+                    </Grid>
+                    <Grid className='grid-card' container spacing={2}>
+                    <Grid item xs={12} md={12}>
+                        <div className='sender-btn-container'>
 
-                        <Grid container style={{ marginTop: "2em", marginLeft: "10em" }} lg={12}>
-                            <Grid item lg={6} xs={12}>
-                                <TextField id="standard-basic" label="Card Number" variant="standard" />
-                            </Grid>
-                            <Grid item lg={6} xs={12}>
-                                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                    <DatePicker
+                        <Button className='card-info-btn' onClick={()=>fraudPage()} variant="contained">Save Card</Button>
+                        </div>
+                    </Grid>
 
-                                        value={expDate}
-                                        onChange={(e) => { setExpDate(e) }}
-                                        renderInput={(params) => <TextField {...params} required variant="standard" id="exp-date" label="Enter Expiry Date" />}
-                                    />
-                                </LocalizationProvider>
-                            </Grid>
+                    </Grid>
 
-                        </Grid>
-                        <Grid container style={{ marginTop: "2em", marginLeft: "10em" }} lg={12} >
-                            <Grid item lg={6} xs={12} >
-                                <TextField id="standard-basic" label="Billing Address" variant="standard" />
-                            </Grid>
-                            <Grid item lg={6} xs={12}>
-                                <TextField id="standard-basic" label="CVV" variant="standard" />
-                            </Grid>
-
-
-
-                        </Grid>
-                        <Grid container style={{ marginTop: "2em", marginLeft: "3em" }} lg={12}>
-                            <Grid item style={{ marginLeft: '23em' }} lg={6} xs={12}>
-                                <Button> <Typography variant="h3"  >Save Card</Typography></Button>
-                            </Grid>
-
-
-
-                        </Grid>
-
-                    </Paper>
-
-                </Box>
-
-
-            </Grid>
-
+            </Container>
         
         </div>
     )
