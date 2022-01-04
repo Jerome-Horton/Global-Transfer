@@ -59,8 +59,6 @@ function payment () {
                                 </LocalizationProvider>
                             </Grid>
 
-
-
                         </Grid>
                         <Grid container style={{ marginTop: "2em", marginLeft: "10em" }} lg={12} >
                             <Grid item lg={6} xs={12} >

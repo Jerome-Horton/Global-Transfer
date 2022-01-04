@@ -1,0 +1,48 @@
+.white-container-sender{
+    background-color: white;
+    width: 80% !important;
+    margin-top: 30px;
+    height: 70vh;
+    padding: 5px;
+    text-align: start;
+}
+.sender-info-text{
+    font-size: 24px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.sender-input-info{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+}
+.grid-sender{
+    margin-top: 30px !important;
+    margin-bottom: 20px !important;
+    margin-left: 20px !important;
+}
+.sender-btn-container{
+    text-align: center;
+}
+.sender-input-info::placeholder{
+    color: gainsboro;
+}
+.sender-info-btn{
+    font-size: 28px !important;
+    color: #6D6D6D !important;
+    background-color: #C4C4C4 !important;
+    font-weight: 600 !important;
+    padding: 10px 40px !important;
+}
+.center-text{
+    border-bottom: 2px solid gainsboro;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 20px !important;
+    font-weight: 600;
+}
