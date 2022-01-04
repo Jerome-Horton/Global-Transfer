@@ -3,9 +3,15 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Header from '../Header/Header';
 import './FraudPage.css';
-
+import { useNavigate } from 'react-router';
 
 function FraudPage () {
+
+    let navigate = useNavigate();
+    
+        function reviewSend() {
+            navigate('/reviewPage')
+    }
 
     return (
 
@@ -28,9 +34,9 @@ function FraudPage () {
                 <h6 className='almost-done-header'>If it sounds too good to be true, it probably is.</h6>
                 <p className='fraud-text'>Never give your transaction reference number to anyone other than the person you intend to receive the money. Fraudulent transactions may result in the loss of your money with no recourse.</p>
 
-                    <div className='fraud-btn-container'>
-                        <Button className='fraud-btn' variant="contained">Review & Send</Button>
-                    </div>
+                <div className='fraud-btn-container'>
+                    <Button className='fraud-btn' onClick={()=>reviewPage()} variant="contained">Review & Send</Button>
+                </div>
     
             </Container>
         </div>
