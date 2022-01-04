@@ -2,6 +2,8 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import './ReceiverPage.css'
+import Header from '../Header/Header';
 
 
 function ReceiverPage () {
@@ -9,6 +11,9 @@ function ReceiverPage () {
     return (
 
         <div >
+            
+            <Header />
+
             <Container className='white-container-receiver' maxWidth="xl">
                 <p className='receiver-info-text'>Receiver Information</p>
             <Grid className='grid-receiver' container spacing={2}>
