@@ -17,7 +17,8 @@ import TabPanel from '@mui/lab/TabPanel';
 
 
 function  homePage() {
-    // const [value, setValue] = React.useState('1');
+
+    const [value, setValue] = React.useState('1');
     // let navigate = useNavigate();
 
     // function estimate() {
@@ -29,9 +30,13 @@ function  homePage() {
     //     navigate('/statusPage')
     //   }
 
-    // const handleChange = (event, newValue) => {
-    //   setValue(newValue);
-    // };
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
+
+    // // function sendNow() {
+    //     navigate('/')
+    //   }
 
     return (
         <div >
@@ -44,7 +49,7 @@ function  homePage() {
                     <Grid  item xs={3} md={3} >
                         <h4>Money Transfer At Your Finger Tips</h4>
                         <h4>Send Money Now Starting At $0 Fee*</h4>
-                        <a className="send-link">Send Now</a>
+                        <a className="send-link" onClick={()=>trackMoney()} >Send Now</a>
                     </Grid>
 
                 <Grid textAlign="center" item xs={3} md={7}>
