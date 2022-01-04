@@ -10,6 +10,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TextField from '@mui/material/TextField';
 import TabPanel from '@mui/lab/TabPanel';
+import './HomePage.css'
 // import { useNavigate } from 'react-router';
 
 
@@ -54,7 +55,7 @@ function  homePage() {
 
                 <Grid textAlign="center" item xs={3} md={7}>
                 <Container className='white-container-track' >
-                    <Box sx={{ width: '100%', typography: 'body1' }}>
+                    <Box sx={{ width: '100%', Typography: 'body1' }}>
                     <TabContext value={value}>
                     <Box  >
                         <TabList onChange={handleChange}  >
