@@ -4,8 +4,13 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Header from '../Header/Header';
 
+// import { useNavigate } from 'react-router';
 
 function  SenderInfo() {
+
+    function ReceiverInfo() {
+        // navigate('/receiverInfo')
+    }
 
     return (
 

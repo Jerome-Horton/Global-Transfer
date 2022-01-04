@@ -5,8 +5,14 @@ import Container from '@mui/material/Container';
 import './ReceiverInfo.css'
 import Header from '../Header/Header';
 
+// import { useNavigate } from 'react-router';
+
 
 function ReceiverPage () {
+
+    function PaymentInfo() {
+        // navigate('/paymentInfo')
+    }
 
     return (
 
