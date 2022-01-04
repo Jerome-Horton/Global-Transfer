@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
+import Header from '../Header/Header';
 
 
 function FraudPage () {
@@ -8,7 +9,7 @@ function FraudPage () {
     return (
 
         <div >
-
+                    <Header />
             <Container className='white-container-summary' maxWidth="xl">
 
                 <p className='fraud-header'>Fraud Protection</p>
