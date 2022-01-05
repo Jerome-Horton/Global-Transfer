@@ -18,7 +18,15 @@ import TabPanel from '@mui/lab/TabPanel';
 
 function Started() {
 
+    const [value, setValue] = React.useState('1');
 
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
+
+    function trackYourMoney() {
+        navigate('/transfer-status')
+      }
 
   return (
     <div >
@@ -33,9 +41,9 @@ function Started() {
           <Grid textAlign="center"   item sm={12} md={7}>
             <Container className='white-container-track' >
               <Box sx={{ width: '100%', typography: 'body1' }}>
-                <TabContext>
+                <TabContext value={value}>
                   <Box  >
-                    <TabList   >
+                    <TabList  onChange={handleChange} >
                       <Tab label="Rates & Fees" value="1" />
                       <Tab label="Track & Receive" value="2" />
                     </TabList>
@@ -93,7 +101,7 @@ Get Started
                   <TabPanel value="2" className="tabs-each">
                     <TextField id="standard-basic" className="input-fields" label="Reference Number" variant="standard" />
                     <TextField id="standard-basic" className="input-fields" label="Full Name" variant="standard" />
-                    <Button className='track-btn' variant="contained">
+                    <Button className='track-btn' onClick={()=>trackYourMoney()} variant="contained">
                       Track Your Money
                     </Button>
                   </TabPanel>
