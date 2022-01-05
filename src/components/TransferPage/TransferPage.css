@@ -1,0 +1,184 @@
+.white-container-track{
+    background-color: white;
+    width: 80% !important;
+    margin-top: 30px;
+    height: auto;
+    text-align: center;
+    padding: 0px !important;
+}
+
+.nav-grid-track{
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.send-link{
+    color: white !important;
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
+.input-field-1{
+    font-size: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 78%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.input-field-1::placeholder{
+    color: rgb(207, 207, 207);
+}
+
+.input-field{
+    font-size: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.input-fields{
+    font-size: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 100%;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.input-field::placeholder{
+    color: rgb(207, 207, 207);
+}
+
+.usd-name-exchange{
+    font-size: 22px;
+    font-weight: 600;
+    color: black;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+    width: 50%;
+
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    color: black !important;
+    border: none !important;
+    font-size: 28px !important;
+    font-weight: 600;
+    background-color: white !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.MuiTabs-indicator {
+    display: none;
+  }
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+    font-weight: 600 !important;
+    font-size: 28px !important;
+    background-color: #cfcccc !important; 
+}
+
+.estimate-btn{
+    font-weight: 500 !important;
+    background-color: rgb(136, 136, 136) !important;
+    margin-top: 20px !important;
+    font-size: 28px !important;
+    float: right;
+}
+
+.track-btn{
+    font-weight: 600 !important;
+    background-color: red !important;
+    margin-top: 20px !important;
+    font-size: 25px !important;
+    float: right;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+.two-inputs{
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 22px;
+    outline: none;
+    width: 230px;    
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+.two-inputs::placeholder{
+    color: black !important;
+    font-weight: 600;
+    padding-left: 5px;
+}
+.radio-payment{
+    color: black !important;
+    font-weight: 600 !important;
+    padding-top: 20px !important;
+    text-align: start !important;
+    font-size: 18px !important;
+}
+
+.radio-options{
+    margin: 0px !important;
+    padding: 0px !important;
+    text-align: start !important;
+    width: 100% !important;
+}
+
+.money-note{
+    font-weight: 600;
+    color: #3d8bff;
+    font-size: 18px;
+}
+
+.get-started-btn{
+    font-weight: 600 !important;
+    background-color: #EB1E1D !important;
+    margin-top: 10px !important;
+    font-size: 18px !important;
+}
+
+.fee{
+    color: black !important;
+    text-align: start !important;
+    margin: 0px !important;
+    font-size: 17px !important;
+    font-weight: 600;
+}
+
+.fee-input{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    width: 120px;    
+}
+
+.fee-input::placeholder{
+    text-align: center;
+    color: black;
+}
+
+@media screen and (max-width:700px) {
+    .two-inputs{
+        width: 150px;    
+     
+    
+    }
+    
+}
