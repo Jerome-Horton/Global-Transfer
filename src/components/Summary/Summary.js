@@ -14,7 +14,7 @@ function Summary() {
 
     function nextBtn() {
         navigate('/success')
-      }
+    }
 
     return (
 
