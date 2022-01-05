@@ -28,6 +28,10 @@ function Started() {
         navigate('/transfer-status')
       }
 
+      function getStarted() {
+        navigate('/login')
+      }
+
   return (
     <div >
        <Header />
@@ -91,7 +95,7 @@ function Started() {
      
         </Grid>
         <p className='money-note'>Money Available by: Tuesday, December 14, 2021</p>
-        <Button className='get-started-btn' variant="contained">
+        <Button className='get-started-btn' onClick={()=>getStarted()} variant="contained">
 Get Started
 </Button>
 
