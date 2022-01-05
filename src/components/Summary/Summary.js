@@ -2,10 +2,19 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import Header from '../Header/Header';
+import './Summary.css';
 
+import { useNavigate } from 'react-router';
 
 
 function Summary() {
+
+    let navigate = useNavigate();
+
+    function nextBtn() {
+        navigate('/success')
+      }
 
     return (
 
@@ -57,7 +66,7 @@ function Summary() {
 
                     </Grid>
                     <Grid item xs={12} md={4} >
-                        <Button className='summary-btn' variant="contained">
+                        <Button className='summary-btn' onClick={() => nextBtn()} variant="contained">
                             Next
                         </Button>
 
