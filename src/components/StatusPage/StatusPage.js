@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Header from '../Header/Header';
+import './StatusPage.css'
 import { useNavigate } from 'react-router';
 
 function statusPage () {
