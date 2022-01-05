@@ -1,0 +1,76 @@
+.complete-login{
+    font-size: 35px;
+    font-weight: 500;
+    margin-top: 10px !important;
+}
+
+.white-container-login{
+    background-color: white;
+    width: 80% !important;
+    margin-top: 30px;
+    height: 72vh;
+    padding: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.reference{
+    font-weight: 500;
+    color: #086AF8;
+}
+
+.return-btn{
+    font-weight: 600 !important;
+    background-color: #EB1E1D !important;
+    margin-top: 40px !important;
+    font-size: 35px !important;
+}
+
+.input-field-login{
+    font-size: 40px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 70%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.input-field-login::placeholder{
+    color: gainsboro;
+}
+
+.forget-container{
+    margin: 0 auto;
+    width: 70%;
+    text-align: start;
+}
+
+.forget-link{
+    font-weight: 700;
+    font-size: 20px;
+    color: black !important;
+    text-decoration-color: black !important;
+}
+
+.forget-link-text{
+    font-weight: 500;
+    font-size: 20px;
+    color: black !important;
+    text-decoration-color: black !important;
+}
+
+.log-btn{
+    font-weight: 700 !important;
+    color: #6D6D6D !important;
+    background-color: #C4C4C4 !important;
+    margin-top: 10px !important;
+    font-size: 30px !important;
+    float: right;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+    text-transform: capitalize !important;
+
+}
