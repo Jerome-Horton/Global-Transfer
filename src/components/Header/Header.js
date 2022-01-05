@@ -15,13 +15,13 @@ const Header = () => {
                 <Grid container ml={70} lg={12}>
 
                     <Grid item lg={5} xs={12}>
-                        <Typography style={{ marginLeft:"1em", color: 'white', fontFamily: 'Rancho' }} variant="h2" component="div">
+                        <Typography style={{ marginLeft: "1em", color: 'white', fontFamily: 'Rancho' }} variant="h2" component="div">
 
                             GlobalTransfer
                         </Typography>
                     </Grid>
 
-                    <Grid  item lg={6} xs={12}>
+                    <Grid item lg={6} xs={12}>
                         <Grid container >
 
                             <Button>   <Typography style={{ color: 'white', marginTop: "1em" }} variant="h6" component="div">
@@ -48,7 +48,7 @@ const Header = () => {
                 <Grid lg={12} item container spacing={10} ml={35} >
 
                     <Grid item lg={2} xs={12} >
-                        <Button>   <Typography style={{ color: 'white', marginTop: "1em" ,marginLeft:"1em" }} variant="h6" component="div">
+                        <Button>   <Typography style={{ color: 'white', marginTop: "1em", marginLeft: "1em" }} variant="h6" component="div">
 
                             Send Money
                         </Typography>
