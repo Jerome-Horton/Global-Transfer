@@ -1,12 +1,28 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import './Login.css';
+import Header from '../Header/Header';
+import { useNavigate } from 'react-router';
+
+
+
 
 function Login () {
 
+        let navigate = useNavigate();
+
+
+            function LoginBtn() {
+      navigate('/senderInfo')
+    }
+
+// need to create a function for signUp button to for a user to sign up.
+
+
     return (
 
-                <div >
+        <div >
             <Header />
             <Container className='white-container-login' maxWidth="xl">
                 <h1 className='complete-login'>Log into Your <br /> GlobalTranfer Profile </h1>
@@ -24,7 +40,7 @@ function Login () {
                         </a>
                     </p>
                 </div>
-                <Button className='log-btn'  variant="contained">
+                <Button className='log-btn' onClick={()=>LoginBtn()} variant="contained">
                 Log In
                 </Button>
 

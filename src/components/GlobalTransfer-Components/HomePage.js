@@ -11,6 +11,7 @@ import TabList from '@mui/lab/TabList';
 import TextField from '@mui/material/TextField';
 import TabPanel from '@mui/lab/TabPanel';
 import './HomePage.css'
+import Header from '../Header/Header';
 // import { useNavigate } from 'react-router';
 
 
@@ -42,7 +43,7 @@ function  homePage() {
     return (
         <div >
 
-
+            <Header />
 
             <Box sx={{ flexGrow: 1 }}>
                 <Grid className='nav-grid-track' container spacing={2}>
