@@ -26,7 +26,7 @@ function HomePage() {
           </p>
 
           <p>
-          {/* Make Send Now a hyper Link and navigate it to the login page. 
+            {/* Make Send Now a hyper Link and navigate it to the login page. 
               Make the letters bold and underline it.
            */}
             Send Now

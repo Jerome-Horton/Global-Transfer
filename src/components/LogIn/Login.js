@@ -8,16 +8,16 @@ import { useNavigate } from 'react-router';
 
 
 
-function Login () {
+function Login() {
 
-        let navigate = useNavigate();
+    let navigate = useNavigate();
 
 
-            function LoginBtn() {
-      navigate('/senderInfo')
+    function LoginBtn() {
+        navigate('/senderInfo')
     }
 
-// need to create a function for signUp button to for a user to sign up.
+    // need to create a function for signUp button to for a user to sign up.
 
 
     return (
@@ -40,8 +40,8 @@ function Login () {
                         </a>
                     </p>
                 </div>
-                <Button className='log-btn' onClick={()=>LoginBtn()} variant="contained">
-                Log In
+                <Button className='log-btn' onClick={() => LoginBtn()} variant="contained">
+                    Log In
                 </Button>
 
             </Container>
