@@ -75,6 +75,27 @@ router.post('/', (req, res) => {
     });
 });
 
+/**
+ * PUT routes
+ */
 
+// This for first Edit button - Updating Payment Method
+router.put("/updatePaymentMethod/:id", (req, res) => {
+  const transactionId = req.params.id;
+  let query = `update transactions
+    set country='${req.body.country}',
+    payment_option='${req.body.payment_option}',
+    receiving_method='${req.body.receiving_method}',
+    amount='${req.body.amount}'
+         where id = ${transactionId} RETURNING *`;
+  pool.query(query)
+    .then((results) => {
+      res.send(results.rows);
+    })
+    .catch((error) => {
+      console.log('/updatePaymentMethod/:id', error);
+      res.sendStatus(500);
+    })
+});
 
 module.exports = router;
