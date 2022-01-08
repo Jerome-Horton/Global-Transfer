@@ -98,4 +98,25 @@ router.put("/updatePaymentMethod/:id", (req, res) => {
     })
 });
 
+// second edit button
+router.put("/updateReceiverInformation/:id", (req, res) => {
+	const transactionId = req.params.id;
+	let query = `update transactions
+					set legal_first_name='${req.body.legal_first_name}',
+					legal_middle_name='${req.body.legal_middle_name}',
+					legal_last_name='${req.body.legal_last_name}',
+					second_last_name='${req.body.second_last_name}',
+					address_1='${req.body.address_1}',
+					address_2='${req.body.address_2}',
+					phone='${req.body.phone}',
+					where id = ${transactionId} RETURNING *`;
+	pool.query(query)
+		.then((results) => {
+			res.send(results.rows);
+		})
+		.catch((error) => {
+			console.log('/updateReceiverInformation/:id', error);
+			res.sendStatus(500);
+		})
+});
 module.exports = router;
