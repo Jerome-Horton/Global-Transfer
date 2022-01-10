@@ -4,34 +4,35 @@
 -- ex. SELECT * FROM "user_profile";
 -- Otherwise you will have errors!
 
-CREATE TABLE users (
+CREATE TABLE "transactions"
+(
     "id" SERIAL PRIMARY KEY,
-	"name" varchar(500) NOT NULL,
-	"address" varchar(1000) NOT NULL,
-	"phone" Varchar NOT NULL,
-	"email" Varchar(500) NOT NULL,
-	"password" varchar(1000) NOT NULL,
-	"card_type" varchar(200) NOT NULL,
-	"card_number" Varchar NOT NULL,
-	"card_title" Varchar (500) NOT NULL,
-	"cvv" Varchar NOT NULL,
-	"billing_address" Varchar (1000) Not Null,
-	"expiration" Varchar (300) Not Null
+    "legal_first_name" VARCHAR (80) NOT NULL,
+    "legal_middle_name" VARCHAR (80) NOT NULL,
+    "legal_last_name" VARCHAR (80) NOT NULL,
+    "second_last_name" VARCHAR (80) NOT NULL,
+    "address_1" VARCHAR (255) NOT NULL,
+    "address_2" VARCHAR (255) NOT NULL,
+    "phone" VARCHAR (80) NOT NULL,
+    "amount" VARCHAR (80) NOT NULL,
+    "country" VARCHAR (80) NOT NULL,
+    "payment_option" VARCHAR (80) NOT NULL,
+    "receiving_method" VARCHAR (80) NOT NULL,
+    "reference_number" VARCHAR (80) NOT NULL,
+    "date" DATE NOT NULL DEFAULT NOW(),
+    "sender_id"  bigint NOT NULL,
+    FOREIGN KEY ("sender_id") REFERENCES "user"(id)
 )
 
-CREATE TABLE transactions (
-	"id" SERIAL PRIMARY KEY,
-	"sender_id" SERIAL,
-    "legal_first_name" varchar(500) NOT NULL,
-    "legal_middle_name" varchar(500) NOT NULL,
-    "legal_last_name" varchar(500) NOT NULL,
-    "second_last_name" varchar(500) NOT NULL,
-    "address_1" varchar(500) NOT NULL,
-    "address_2" varchar(500) NOT NULL,
-    "phone" Varchar,
-    "amount" Varchar,
-    "country" Varchar,
-    "payment_option" Varchar,
-    "receiving_method" Varchar,
-    "reference_number" Varchar,
-    date date
+CREATE TABLE "currency"
+(
+    "id" SERIAL PRIMARY KEY,
+    "full_name" VARCHAR (80) NOT NULL,
+    "short_name" VARCHAR (80) NOT NULL,
+    "exchange_rate" VARCHAR (80) NOT NULL,
+    "currency_name" VARCHAR (80) NOT NULL
+)
+
+
+INSERT INTO "currency" (full_name, short_name, exchange_rate, currency_name)
+  values ( 'Australia', 'aus' , '1.39' , 'aud' )   

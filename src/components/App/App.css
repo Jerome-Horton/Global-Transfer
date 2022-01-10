@@ -7,11 +7,9 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  background-color: #008001;
 }
 
-/* body {
-  background-color: #008001;
- } */
 
 img {
   display: inline-block;
