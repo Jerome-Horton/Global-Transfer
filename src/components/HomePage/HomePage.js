@@ -33,6 +33,7 @@ const useStyles = makeStyles({
 });
 
 
+
 function homePage() {
 
     const [value, setValue] = React.useState('1');
@@ -100,6 +101,7 @@ function homePage() {
         setValue(newValue);
     };
 
+
     function sendNow() {
         navigate.push('/')
     }
@@ -119,6 +121,7 @@ function homePage() {
                         <h4>Money Transfer At Your Finger Tips</h4>
                         <h4>Send Money Now Starting For $0 Fee*</h4>
                         <a className="send-link" onClick={sendNow} >Send Now</a>
+
                     </Grid>
 
                     <Grid textAlign="center" item xs={3} md={7}>
@@ -131,6 +134,7 @@ function homePage() {
                                             <Tab label="Track & receive" value="2" />
                                         </TabList>
                                     </Box>
+
 
                                     <TabPanel value="1" className="tabs-each">
                                         <input className="input-field-1" placeholder='Send Amount'
@@ -176,6 +180,7 @@ function homePage() {
 
                                         <Button className='track-btn' onClick={trackYourMoney} variant="contained"
                                             disabled={!reference && !fullName}>Track Your Money</Button>
+
                                     </TabPanel>
                                 </TabContext>
                             </Box>

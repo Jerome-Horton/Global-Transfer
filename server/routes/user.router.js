@@ -18,19 +18,22 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
 router.post('/register', (req, res, next) => {
-  const username = req.body.username;
+  const { username,address,phone,email,cardType ,cardNumber, cardTitle , expiration, cvv, billingAddress
+  } = req.body
+
   const password = encryptLib.encryptPassword(req.body.password);
 
-  const queryText = `INSERT INTO "user" (username, password)
-    VALUES ($1, $2) RETURNING id`;
+  const queryText = `INSERT INTO "user" (username, password, address, phone, email, card_type, card_number, card_title, cvv, billing_address, expiration)
+  values ( $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`;
+
   pool
-    .query(queryText, [username, password])
+    .query(queryText, [username, password, address, phone, email, cardType , cardNumber, cardTitle,cvv, billingAddress, expiration])
     .then(() => res.sendStatus(201))
     .catch((err) => {
       console.log('User registration failed: ', err);
       res.sendStatus(500);
     });
-});
+});;
 
 // Handles login form authenticate/login POST
 // userStrategy.authenticate('local') is middleware that we run on this route
