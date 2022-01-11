@@ -1,93 +1,129 @@
-import AppBar from '@mui/material/AppBar';
+import React from 'react;
+import { useHistory } from 'react-router-dom'
+import { useSelector,useDispatch } from 'react-redux'
+
+
+
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import { IconFlagUS } from 'material-ui-flags';
-import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import USFlag from "../../assets/images/flag.png"
+import swal from 'sweetalert';
 
 import './Header.css'
 
 
 const Header = () => {
+
+
+    const user = useSelector(state => state.user)
+    const dispatch = useDispatch()
+    let navigate = useHistory();
+
+    
+    function handleSend() {
+        navigate.push('/')
+    }
+
+    // function handleTrack() {
+    //     navigate.push('/')
+    // }
+
+    const handleLoginClick = () => {
+        navigate.push('/login')
+    }
+
+    const handleSignOut = () => {
+
+        swal({
+            title: "Are you sure you want to sign out?",
+            text: "You will lose all progress",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    dispatch({ type: 'CLEAR_CURRENCY' })
+                    dispatch({ type: 'CLEAR_RECEIVER_INFO' })
+                    dispatch({ type: 'CLEAR_USER_INFO' })
+                    dispatch({ type: 'CLEAR_TRANSACTION' })
+                    dispatch({ type: 'CLEAR_REFERENCE_NUMBER' })
+                    dispatch({ type: 'LOGOUT' })
+                    swal("Signed out Successfully!", {
+                        icon: "success",
+                    });
+                    navigate.push('/')
+                } else {
+                    swal("You can continue with the payment");
+                }
+            });
+
+    }
+
     return (
         <div>
-            <AppBar class="Appbar-1">
-                <Grid container ml={70} lg={12}>
-
-                    <Grid item lg={5} xs={12}>
-                        <Typography style={{ marginLeft: "1em", color: 'white', fontFamily: 'Rancho' }} variant="h2" component="div">
-
-                            GlobalTransfer
-                        </Typography>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid className='nav-grid' container spacing={2}>
+                    <Grid textAlign="right" item xs={6} md={6} >
+                        <h1 className='title-text'>GlobalTransfer</h1>
                     </Grid>
-
-                    <Grid item lg={6} xs={12}>
-                        <Grid container >
-
-                            <Button>   <Typography style={{ color: 'white', marginTop: "1em" }} variant="h6" component="div">
-
-                                Help
-                            </Typography>
-                            </Button>
-
-
-
-                            <IconButton style={{ color: 'white', marginTop: "0.5em", marginLeft: "2.5em" }}  ><IconFlagUS /> <Typography style={{ color: 'white', marginLeft: "4px" }} variant="h6" component="div">
-
-                                EN
-                            </Typography> </IconButton>
-
-                        </Grid >
-
-                    </Grid>
+                    {user.id &&
+                        <Grid textAlign="center" item xs={4} md={4} >
+                            <h1 className='title-text'>Welcome : {user.firstName}</h1>
+                        </Grid>
+                    }
+                    {/* <Grid textAlign="center" item xs={3} md={2}>
+            <p style={{color:"white",fontSize:"16px",float:"right"}}>HELP <img width="25px" src={USFlag} /> EN</p>
+        </Grid> */}
 
                 </Grid>
+            </Box>
 
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid className='nav-grid' container spacing={2}>
+                    <Grid className='nav-items' textAlign="center" item xs={3} md={2} >
+                        <li onClick={() => handleSend()} style={{ cursor: "pointer" }}>
 
-
-                <Grid lg={12} item container spacing={10} ml={35} >
-
-                    <Grid item lg={2} xs={12} >
-                        <Button>   <Typography style={{ color: 'white', marginTop: "1em", marginLeft: "1em" }} variant="h6" component="div">
-
-                            Send Money
-                        </Typography>
-                        </Button>
-
+                            Send/Track Money
+                        </li>
                     </Grid>
-                    <Grid item lg={2} xs={12} >
-                        <Button>   <Typography style={{ color: 'white', marginTop: "1em" }} variant="h6" component="div">
+                    {/* <Grid  className='nav-items'style={{cursor:"pointer"}}  textAlign="center" item xs={3} md={2}>
+        <li onClick={()=>handleTrack()}>
 
-                            Track + Receive
-                        </Typography>
-                        </Button>
+            Track+Recieve
+        </li>
+        </Grid> */}
 
-                    </Grid>
-                    <Grid item lg={1} xs={12} >
-                        <Button>   <Typography style={{ color: 'white', marginTop: "1em" }} variant="h6" component="div">
+                    {!user.id &&
+                        <>
+                            <Grid className='nav-items' textAlign="center" item xs={3} md={2}>
+                                <li onClick={() => handleLoginClick()} style={{ cursor: "pointer" }}>
 
-                            Login
-                        </Typography>
-                        </Button>
+                                    Log In
+                                </li>
 
-                    </Grid>
-                    <Grid item lg={2} xs={12} >
-                        <Button>   <Typography style={{ color: 'white', marginTop: "1em" }} variant="h6" component="div">
+                            </Grid>
+                            <Grid className='nav-items' textAlign="center" item xs={3} md={2}>
+                                <li onClick={() => navigate.push('/sender-info')} style={{ cursor: "pointer" }}>
 
-                            Sign Up
-                        </Typography>
-                        </Button>
+                                    Sign Up
+                                </li>
+                            </Grid>
+                        </>
+                    }
 
-                    </Grid>
+                    {user.id &&
+                        <Grid className='nav-items' style={{ cursor: "pointer" }} textAlign="center" item xs={3} md={2}>
+                            <li onClick={() => handleSignOut()}>
 
-
+                                Sign Out
+                            </li>
+                        </Grid>
+                    }
                 </Grid>
-
-
-            </AppBar>
-
+            </Box>
         </div>
-
     );
 }
+
 export default Header;

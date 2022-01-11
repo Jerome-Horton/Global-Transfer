@@ -1,12 +1,13 @@
-.Appbar-1 {
+.nav-items li{
+  list-style: none;
 
-    background-color: darkgreen;
-    
-    
-    }
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-        grid-gap: 1rem;
-        position:relative;
-      }
+}
+.nav-items{
+  cursor: pointer;
+  text-align: center;
+}
+@media screen and (max-width:700px) {
+.nav-items li{
+  font-size: 18px;
+}   
+}
