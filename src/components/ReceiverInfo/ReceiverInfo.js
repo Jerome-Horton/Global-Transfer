@@ -21,7 +21,15 @@ function ReceiverPage() {
     const [phone, setPhone] = useState(receiverInfo.phone || "")
     const [address, setAddress] = useState(receiverInfo.address || "")
 
+    function nextButton() {
 
+        const data = { firstName, middleName, lastName, phone, address }
+        dispatch({
+          type: 'SET_RECEIVER_INFO',
+          payload : data
+        })
+        navigate.push('/fraud-protection')
+      }
 
     return (
 
@@ -84,8 +92,8 @@ function ReceiverPage() {
 
 
                     <Grid item xs={12} md={6}>
-                        <div className='receiver-btn-container'>
-                            <Button className='sender-info-btn' onClick={() => PaymentInfo()} variant="contained">Next</Button>
+                        <div className='sender-btn-container'>
+                            <Button className='sender-info-btn' onClick={() => nextButton()} variant="contained">Next</Button>
                         </div>
                     </Grid>
 
