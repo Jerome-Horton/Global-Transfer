@@ -22,7 +22,10 @@ function statusPage() {
         }
     }, [])
 
-
+    function homeBtn() {
+        dispatch({ type: 'CLEAR_TRACKING_INFO' })
+        navigate.push('/')
+    }
 
     return (
 
