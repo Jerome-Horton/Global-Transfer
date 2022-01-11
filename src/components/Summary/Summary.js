@@ -42,8 +42,30 @@ function Summary() {
 
     }
 
-    function nextBtn() {
-        navigate('/success')
+    const handleDelete = () => {
+
+        swal({
+            title: "Are you sure?",
+            text: "You will lose all progress",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    dispatch({ type: 'CLEAR_CURRENCY' })
+                    dispatch({ type: 'CLEAR_RECEIVER_INFO' })
+                    dispatch({ type: 'CLEAR_USER_INFO' })
+                    dispatch({ type: 'CLEAR_TRANSACTION' })
+                    dispatch({ type: 'CLEAR_REFERENCE_NUMBER' })
+                    swal("Deleted Successfully!", {
+                        icon: "success",
+                    });
+                    navigate.push('/')
+                } else {
+                    swal("You can continue with the payment");
+                }
+            });
     }
 
     return (
