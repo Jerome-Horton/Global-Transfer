@@ -4,6 +4,23 @@
 -- ex. SELECT * FROM "user_profile";
 -- Otherwise you will have errors!
 
+CREATE TABLE "user" (
+    "id" SERIAL PRIMARY KEY,
+    "username" VARCHAR (80) UNIQUE NOT NULL,
+    "password" VARCHAR (1000) NOT NULL,
+    "firstName" VARCHAR (80) UNIQUE NOT NULL,
+    "middleName" VARCHAR (80) UNIQUE NOT NULL,
+    "lastName" VARCHAR (80) UNIQUE NOT NULL,
+	"phone" varchar(255) UNIQUE NOT NULL,
+	"address" varchar(255) UNIQUE NOT NULL,
+    "card_type" varchar(255) NOT NULL,
+    "card_number" varchar(255) NOT NULL,
+    "card_title" varchar(255) NOT NULL,
+    "cvv" varchar(255) NOT NULL,
+    "billing_address" varchar(255) NOT NULL,
+    "expiration" varchar(255) NOT NULL
+    )
+
 CREATE TABLE "transactions"
 (
     "id" SERIAL PRIMARY KEY,
