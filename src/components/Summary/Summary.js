@@ -116,13 +116,13 @@ function Summary() {
                     </Grid>
 
                     <Grid item xs={6} md={4} >
-                        <Button className='summary-btn' variant="contained">
+                        <Button className='summary-btn' variant="contained" onClick={handleDelete} >
                             Delete
                         </Button>
 
                     </Grid>
                     <Grid item xs={12} md={4} >
-                        <Button className='summary-btn' onClick={() => nextBtn()} variant="contained">
+                        <Button className='summary-btn' onClick={() => transactionConfirmation()} variant="contained">
                             Next
                         </Button>
 
