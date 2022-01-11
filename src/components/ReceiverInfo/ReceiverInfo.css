@@ -1,17 +1,19 @@
-.white-container-receiver{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@500&family=Rancho&display=swap');
+
+.white-container-sender{
     background-color: white;
     width: 80% !important;
     margin-top: 30px;
-    height: 70vh;
+    height: auto;
     padding: 5px;
     text-align: start;
 }
-.receiver-info-text{
+.sender-info-text{
     font-size: 24px;
     margin-top: 10px;
     font-weight: 600;
 }
-.receiver-input-info{
+.sender-input-info{
     outline: none;
     border: none;
     border-bottom: 2px solid gray;
@@ -21,18 +23,18 @@
     width: 85%;
     margin: 0 auto;
 }
-.grid-receiver{
+.grid-sender{
     margin-top: 30px !important;
     margin-bottom: 20px !important;
     margin-left: 20px !important;
 }
-.receiver-btn-container{
+.sender-btn-container{
     text-align: center;
 }
-.receiver-input-info::placeholder{
+.sender-input-info::placeholder{
     color: gainsboro;
 }
-.receiver-info-btn{
+.sender-info-btn{
     font-size: 28px !important;
     color: #6D6D6D !important;
     background-color: #C4C4C4 !important;
