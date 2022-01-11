@@ -115,7 +115,7 @@ function SenderInfo() {
 
                         <Grid item xs={12} md={6}>
                             <div className='sender-btn-container'>
-                                <Button className='sender-info-btn' onClick={() => PaymentInfo()} variant="contained">Next</Button>
+                                <Button className='sender-info-btn' onClick={() => paymentInfo()} variant="contained">Next</Button>
                             </div>
                         </Grid>
 
