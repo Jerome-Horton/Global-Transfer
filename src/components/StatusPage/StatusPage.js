@@ -1,24 +1,34 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import { useHistory } from 'react-router';
+import {useSelector,useDispatch} from 'react-redux'
+
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import Header from '../Header/Header';
+
 import './StatusPage.css'
-import { useNavigate } from 'react-router';
 
-function statusPage() {
+function statusPage () {
 
-    let navigate = useNavigate();
+const dispatch = useDispatch()
+let navigate = useHistory();
 
-    function homeBtn() {
-        navigate('/')
+const trackingInfo = useSelector(state => state.tracking)
+
+useEffect(() => {
+      
+    return () => {
+      dispatch({type: 'CLEAR_TRACKING_INFO'})
     }
+  }, [])
+
+
 
     return (
 
         <div>
 
-            <Header />
+
 
             <Container className='white-container-transfer' maxWidth="xl">
                 <p className='transfer-status'>Transfer Status</p>
