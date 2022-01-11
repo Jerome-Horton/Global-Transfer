@@ -22,8 +22,8 @@ function SenderInfo() {
     const [phone, setPhone] = useState("")
     const [address, setAddress] = useState("")
 
-    function handleClick() {
-        navigate.push('/login')
+    // function handleClick() {
+    //     navigate.push('/login')
 
 
         function paymentInfo() {
