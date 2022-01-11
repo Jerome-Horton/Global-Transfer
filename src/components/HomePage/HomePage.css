@@ -1,80 +1,104 @@
-/* --------------------------------------------------------------------------------
-Grid
--------------------------------------------------------------------------------- */
+.white-container-track{
+    background-color: white;
+    width: 80% !important;
+    margin-top: 30px;
+    height: 60vh;
+    text-align: center;
+    padding: 0px !important;
+}
 
-.grid {
-    display: flex;
-    flex: 0 1 auto;
-    /* defaults to 'row' */
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* defaults to 'flex-start' */
-    justify-content: flex-start;
-    align-items: flex-start;
+.nav-grid-track{
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    justify-content: center;
+}
+.send-link{
+    color: white !important;
+    text-decoration: underline !important;
+    cursor: pointer;
+
+}
+.input-field-1{
+    font-size: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 78%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.input-field-1::placeholder{
+    color: rgb(207, 207, 207);
+}
+.input-field{
+    font-size: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.input-fields{
+    font-size: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
+    width: 100%;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.input-field::placeholder{
+    color: rgb(207, 207, 207);
+}
+
+.usd-name{
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+    width: 50%;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    color: black !important;
+    border: none !important;
+    font-size: 28px !important;
+    font-weight: 600;
+    background-color: white !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.MuiTabs-indicator {
+    display: none;
   }
-  
-  .grid-col {
-    flex: 0 0 auto;
-    padding: 0 0.5rem 0.5rem;
-    box-sizing: border-box;
-  }
-  
-  .grid-col_1 {
-    flex-basis: 8.33333333%;
-    max-width: 8.33333333%;
-  }
-  
-  .grid-col_2 {
-    flex-basis: 16.66666667%;
-    max-width: 16.66666667%;
-  }
-  
-  .grid-col_3 {
-    flex-basis: 25%;
-    max-width: 25%;
-  }
-  
-  .grid-col_4 {
-    flex-basis: 33.33333333%;
-    max-width: 33.33333333%;
-  }
-  
-  .grid-col_5 {
-    flex-basis: 41.66666667%;
-    max-width: 41.66666667%;
-  }
-  
-  .grid-col_6 {
-    flex-basis: 50%;
-    max-width: 50%;
-  }
-  
-  .grid-col_7 {
-    flex-basis: 58.33333333%;
-    max-width: 58.33333333%;
-  }
-  
-  .grid-col_8 {
-    flex-basis: 66.66666667%;
-    max-width: 66.66666667%;
-  }
-  
-  .grid-col_9 {
-    flex-basis: 75%;
-    max-width: 75%;
-  }
-  
-  .grid-col_10 {
-    flex-basis: 83.33333333%;
-    max-width: 83.33333333%;
-  }
-  
-  .grid-col_11 {
-    flex-basis: 91.66666667%;
-    max-width: 91.66666667%;
-  }
-  
-  .grid-col_12 {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+    font-weight: 600 !important;
+    font-size: 28px !important;
+    background-color: #cfcccc !important; 
+}
+
+.estimate-btn{
+    font-weight: 500 !important;
+    background-color: rgb(136, 136, 136) !important;
+    margin-top: 20px !important;
+    font-size: 28px !important;
+    float: right;
+}
+
+.track-btn{
+    font-weight: 600 !important;
+    background-color: red !important;
+    margin-top: 20px !important;
+    font-size: 25px !important;
+    float: right;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
