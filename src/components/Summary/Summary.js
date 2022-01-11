@@ -78,7 +78,7 @@ function Summary() {
                 <h5 className='rates-fees'>Rate & Fees <span className='edit-btn'>
                     <button onClick={() => navigate.push('/')}>Edit</button></span> </h5>
                 <p className='conversion-rate'>{`${transaction.amount} USD = 
-          ${transaction.convertedValue} ${transaction.currencyName} Exchange Rate: ${transaction.conversionRate} `}</p>
+        ${transaction.convertedValue} ${transaction.currencyName} Exchange Rate: ${transaction.conversionRate} `}</p>
 
                 <Grid className='summary-small-boxes' container spacing={2}>
                     <Grid item xs={3} md={3} >
