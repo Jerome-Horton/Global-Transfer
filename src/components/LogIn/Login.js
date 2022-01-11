@@ -1,46 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import './Login.css';
-import Header from '../Header/Header';
-import { useNavigate } from 'react-router';
+
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
 
 
 function Login() {
 
-    let navigate = useNavigate();
+    // let navigate = useHistory();
+    const dispatch = useDispatch();
 
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     function LoginBtn() {
-        navigate('/senderInfo')
-    }
-
-    // need to create a function for signUp button to for a user to sign up.
-
+        if (username && password) {
+            dispatch({
+              type: 'LOGIN',
+              payload: {
+                username: username,
+                password: password,
+              },
+            });
+          }
+        }; // end login
 
     return (
 
         <div >
-            <Header />
-            <Container className='white-container-login' maxWidth="xl">
-                <h1 className='complete-login'>Log into Your <br /> GlobalTranfer Profile </h1>
-                <input className="input-field-login" placeholder='EMAIL ADDRESS' type="email" />
-                <input className="input-field-login" placeholder='PASSWORD' type="password" />
+
+                <Container className='white-container-login' maxWidth="xl">
+                <h1 className='complete-login'>Log into Your <br /> GlobalTransfer Profile </h1>
+                <input className="input-field-login" placeholder='USERNAME' type="text" 
+                value={username} onChange={(e)=>{setUsername(e.target.value)}}/>
+                <input className="input-field-login" placeholder='PASSWORD' type="password" 
+                value={password} onChange={(e)=>{setPassword(e.target.value)}}
+                />
                 <div className='forget-container'>
 
-                    <a href="" className="forget-link">
+                    {/* <a href="" className="forget-link">
                         Forgot Password?
-                    </a>
-                    <p className="forget-link-text">Don't have an account?
+                    </a> */}
+                    <p className="forget-link-text">Don't have an account?</p>
+                    <Button className='signUp-btn' component = {Link} to = "/sender-info" variant="contained">
+                        Sign Up
+                    </Button>
 
-                        <a href="" className="forget-link-text">
-                            Sign Up
-                        </a>
-                    </p>
                 </div>
-                <Button className='log-btn' onClick={() => LoginBtn()} variant="contained">
+                <Button className='log-btn' onClick={LoginBtn} variant="contained">
                     Log In
                 </Button>
 
@@ -50,3 +62,5 @@ function Login() {
     )
 
 }
+
+export default Login;

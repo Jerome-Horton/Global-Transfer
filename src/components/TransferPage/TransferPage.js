@@ -1,4 +1,10 @@
 import React from 'react';
+import React,{useState} from 'react';
+import {useSelector,useDispatch} from 'react-redux'
+import { useHistory } from 'react-router';
+import './TransferPage.css';
+
+
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
@@ -15,10 +21,19 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TextField from '@mui/material/TextField';
 import TabPanel from '@mui/lab/TabPanel';
-import Header from '../Header/Header';
-import './TransferPage.css';
+import USFlag from "../../assets/images/flag.png"
+import LBDFlag from "../../assets/images/lbdflag.png"
+import canFlag from '../../assets/images/can.png'
+
+
 
 function Started() {
+
+    let navigate = useHistory();
+    const dispatch = useDispatch()
+
+    const transaction = useSelector(state => state.transaction)
+    const user = useSelector(state => state.user)
 
     const [value, setValue] = React.useState('1');
 
@@ -27,16 +42,51 @@ function Started() {
     };
 
     function trackYourMoney() {
-        navigate('/transfer-status')
+        navigate.push('/transfer-status')
     }
 
     function getStarted() {
-        navigate('/login')
+        if (!user.id){
+            navigate.push('/login')
+          }
+          else{
+          navigate.push('/receiver-info')
+          }
     }
+
+
+
+    const onChangeTransactionAmount = (e)=> {
+
+
+        const totalAmount = e.target.value
+        const convertedValue = totalAmount * transaction.conversionRate 
+    
+        dispatch({
+          type : 'CHANGE_TRANSACTION_AMOUNT',
+          payload : { totalAmount , convertedValue }
+        })
+        
+    
+      }
+
+    const onChangeConvertedAmount = (e) => {
+
+
+        const convertedValue = e.target.value 
+        const totalAmount = convertedValue / transaction.conversionRate
+    
+    
+        dispatch({
+          type : 'CHANGE_TRANSACTION_AMOUNT',
+          payload : { convertedValue , totalAmount }
+        })
+    
+      }
 
     return (
         <div >
-            <Header />
+
             <Box sx={{ flexGrow: 1 }}>
                 <Grid className='nav-grid-track' container spacing={2}>
                     <Grid item sm={7} md={3} >
@@ -60,7 +110,8 @@ function Started() {
                                             <Grid className='nav-grid' container spacing={2}>
                                                 <Grid item xs={6} md={6} >
 
-                                                    <input className='two-inputs' placeholder='200.00' /><span className='usd-name-exchange'>USD <img width="30px" src={USFlag} /></span>
+                                                    <input className='two-inputs' value = {transaction.amount} onChange = {onChangeTransactionAmount} 
+                                                    /><span className='usd-name-exchange'>USD <img width="30px" src={USFlag} /></span>
                                                     <div className='radio-payment'>
                                                         Payment Option
                                                     </div>
@@ -72,21 +123,24 @@ function Started() {
                                                     >
                                                         <FormControlLabel style={{ color: "black" }} value="credit" control={<Radio />} label="Credit Card " />
                                                         <FormControlLabel style={{ color: "black" }} value="debit" control={<Radio />} label="Debit Card" />
-                                                        <FormControlLabel style={{ color: "black" }} value="bank" control={<Radio />} label=" Bank Account " />
+                                                        {/* <FormControlLabel style={{ color: "black" }} value="bank" control={<Radio />} label=" Bank Account " /> */}
                                                     </RadioGroup>
 
 
                                                 </Grid>
                                                 <Grid item xs={6} md={6}>
 
-                                                    <input className='two-inputs' placeholder='200.00' /><span className='usd-name-exchange'>LBD <img width="30px" src={LBDFlag} /></span>
-                                                    <div className='radio-payment'>
-                                                        Select Receiving Method
+                                                    <input className='two-inputs' value={transaction.convertedValue} 
+                                                        onChange = {onChangeConvertedAmount}/>
+                                                        <span className='usd-name-exchange'> {transaction.selectCountryShortName?.toUpperCase()} 
+                                                        <img width="30px" src={`/images/${transaction.selectCountryShortName}.png`}
+                                                        style={{verticalAlign:"top", marginLeft:"0.5rem"}}/></span>
 
-                                                    </div>
+                                                        <div className='radio-payment'>Select Receiving Method</div>
+
                                                     <RadioGroup
                                                         aria-label="receiving"
-                                                        defaultValue="wallet"
+                                                        defaultValue="pickup"
                                                         name="radio-buttons-group"
                                                     >
                                                         <FormControlLabel style={{ color: "black" }} value="pickup" control={<Radio />} label="Cash Pickup" />
@@ -98,7 +152,7 @@ function Started() {
                                             </Grid>
                                             <p className='money-note'>Money Available by: Tuesday, December 14, 2021</p>
                                             <Button className='get-started-btn' onClick={() => getStarted()} variant="contained">
-                                                Get Started
+                                            {user.id ? "Get Started" : "Sign Up/Login to get started"}
                                             </Button>
 
                                         </Box>

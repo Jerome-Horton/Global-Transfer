@@ -1,43 +1,50 @@
 import React, { useState } from 'react';
-import Header from '../Header/Header';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-// import DatePicker from '@mui/lab/DatePicker';
-// import AdapterDateFns from '@mui/lab/AdapterDateFns';
-// import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import Button from '@mui/material/Button';
-
-// import { useNavigate } from 'react-router';
 
 
 
+function cardInfo() {
 
-function payment() {
+    const dispatch = useDispatch()
 
-    //     const [expDate, setExpDate] = useState(null);
+    const userInfo = useSelector(state => state.userInfo.senderInfo)
 
-    //     <Grid item lg={6} xs={12}>
-    //     <LocalizationProvider dateAdapter={AdapterDateFns}>
-    //         <DatePicker
+    const [cardType, setCardType] = useState("")
+    const [cardNumber, setCardNumber] = useState("")
 
-    //             value={expDate}
-    //             onChange={(e) => { setExpDate(e) }}
-    //             renderInput={(params) => <TextField {...params} required variant="standard" id="exp-date" label="Enter Expiry Date" />}
-    //         />
-    //     </LocalizationProvider>
-    // </Grid>
+    const [cardTitle, setCardTitle] = useState("")
 
-    //navigation to fraudPage
-    // function fraudPage() {
-    //     navigate('/fraudPage')
-    //   }
+    const [cvv, setCvv] = useState("")
+
+    const [billingAddress, setBillingAddress] = useState("")
+
+    const [expiration, setExpiration] = useState("")
+
+
+    function summary() {
+        const data = {
+            ...userInfo, cardType, cardNumber, cardTitle, cvv, billingAddress, expiration
+        }
+
+        console.log(data)
+        dispatch({
+            type: 'REGISTER',
+            payload: data
+        })
+
+        // navigate.push('/summary')
+    }
 
     return (
 
         <div>
 
-            <Header />
+
 
             <Container className='white-container-card' maxWidth="xl">
                 <p className='sender-info-text'>Payment Information</p>
@@ -45,36 +52,54 @@ function payment() {
 
                 <Grid className='grid-card' container spacing={2}>
                     <Grid item xs={12} md={6} >
-                        <input className='card-input-info' placeholder='Card Number' type="text" />
+                        <input className='card-input-info' placeholder='Card Number'
+                            onChange={(e) => { setCardNumber(e.target.value) }}
+                            value={cardNumber}
+                            type="text" />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <input className='card-input-info' placeholder='EXPIRATION MM/YY' type="text" />
+                        <input className='card-input-info'
+                            onChange={(e) => { setExpiration(e.target.value) }}
+                            value={expiration}
+                            placeholder='EXPIRATION MM/YY' type="text" />
                     </Grid>
 
                 </Grid>
                 <Grid className='grid-card' container spacing={2}>
                     <Grid item xs={12} md={6} >
-                        <input className='card-input-info' placeholder='Billing Address' type="text" />
+                        <input className='card-input-info'
+                            onChange={(e) => { setBillingAddress(e.target.value) }}
+                            value={billingAddress}
+                            placeholder='Billing Address' type="text" />
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <input className='card-input-info' placeholder='CVV' type="text" />
+                        <input className='card-input-info'
+                            onChange={(e) => { setCvv(e.target.value) }}
+                            value={cvv}
+                            placeholder='CVV' type="text" />
                     </Grid>
 
                 </Grid>
                 <Grid className='grid-card' container spacing={2}>
                     <Grid item xs={12} md={6} >
-                        <input className='card-input-info' placeholder='Billing Address' type="text" />
+                        <input className='card-input-info'
+                            onChange={(e) => { setCardType(e.target.value) }}
+                            value={cardType}
+                            placeholder='Card Type' type="text" />
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <input className='card-input-info' placeholder='Phone Number' type="text" />
+                    <Grid item xs={12} md={6} >
+                        <input className='card-input-info'
+                            onChange={(e) => { setCardTitle(e.target.value) }}
+                            value={cardTitle}
+                            placeholder='Card Title' type="text" />
                     </Grid>
-
                 </Grid>
                 <Grid className='grid-card' container spacing={2}>
                     <Grid item xs={12} md={12}>
                         <div className='sender-btn-container'>
 
-                            <Button className='card-info-btn' onClick={() => fraudPage()} variant="contained">Save Card</Button>
+                            <Button className='card-info-btn' onClick={summary} variant="contained">
+                                Save Card and Sign Up</Button>
                         </div>
                     </Grid>
 
@@ -86,4 +111,4 @@ function payment() {
     )
 }
 
-export default payment;
+export default cardInfo;

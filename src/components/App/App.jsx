@@ -8,8 +8,9 @@ import {
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import Nav from '../Nav/Nav';
+// import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
+import Header from '../Header/Header'
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
@@ -20,7 +21,20 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
+import HomePage from '../HomePage/HomePage'
+import TransferPage from '../TransferPage/TransferPage'
+import Login from '../Login/Login'
+import SenderInfo from '../SenderInfo/SenderInfo'
+import PaymentInfo from '../PaymentInfo/PaymentInfo'
+import ReceiverInfo from '../ReceiverInfo/ReceiverInfo'
+import FraudPage from '../FraudPage/FraudPage'
+import Summary from '../Summary/Summary'
+import Success from '../Success/Success'
+import Status from '../StatusPage/StatusPage'
+
 import './App.css';
+import homePage from '../HomePage/HomePage';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -34,12 +48,12 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Header />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-          <Redirect exact from="/" to="/home" />
-
+          {/* <Redirect exact from="/" to="/home" /> */}
           {/* Visiting localhost:3000/about will show the about page. */}
+
           <Route
             // shows AboutPage at all times (logged in or not)
             exact
@@ -47,6 +61,81 @@ function App() {
           >
             <AboutPage />
           </Route>
+
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/"
+          >
+              <HomePage />
+          </Route>
+
+          
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/transfer-status"
+          >
+              <Status />
+          </Route>
+
+
+
+          <Route
+            exact
+            path="/login"
+          >
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect to the /user page
+              <Redirect to="/" />
+              :
+              // Otherwise, show the login page
+              <Login />
+            }
+          </Route>
+
+          <ProtectedRoute
+            exact
+            path="/receiver-info"
+          >
+            <ReceiverInfo/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/success"
+          >
+            <Success/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/fraud-protection"
+          >
+            <FraudPage/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            exact
+            path="/summary"
+          >
+            <Summary/>
+          </ProtectedRoute>
+
+
+          
+
+          <Route
+            // shows AboutPage at all times (logged in or not)
+            exact
+            path="/getStarted"
+          >
+            <TransferPage />
+          </Route>
+
+
+
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
@@ -68,7 +157,7 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
-          <Route
+          {/* <Route
             exact
             path="/login"
           >
@@ -80,7 +169,7 @@ function App() {
               // Otherwise, show the login page
               <LoginPage />
             }
-          </Route>
+          </Route> */}
 
           <Route
             exact
@@ -93,6 +182,36 @@ function App() {
               :
               // Otherwise, show the registration page
               <RegisterPage />
+            }
+          </Route>
+
+
+          
+          <Route
+            exact
+            path="/sender-info"
+          >
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect them to the /user page
+              <Redirect to="/" />
+              :
+              // Otherwise, show the registration page
+              <SenderInfo />
+            }
+          </Route>
+
+          <Route
+            exact
+            path="/card-info"
+          >
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect them to the /user page
+              <Redirect to="/" />
+              :
+              // Otherwise, show the registration page
+              <PaymentInfo />
             }
           </Route>
 
@@ -110,9 +229,10 @@ function App() {
             }
           </Route>
 
+
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
-            <h1>404</h1>
+            <h1>404 : PAGE NOT FOUND</h1>
           </Route>
         </Switch>
         <Footer />
@@ -120,5 +240,7 @@ function App() {
     </Router>
   );
 }
+
+export default App;
 
 export default App;
