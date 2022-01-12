@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 
 
-function ReceiverPage() {
+function ReceiverPage(props) {
 
     let navigate = useHistory();
     const dispatch = useDispatch();

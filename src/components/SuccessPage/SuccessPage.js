@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
-import './success.css'
+import './SuccessPage.css'
 
 
 

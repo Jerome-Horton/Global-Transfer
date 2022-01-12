@@ -18,22 +18,22 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
-import LoginPage from '../LoginPage/LoginPage';
+// import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
-import HomePage from '../HomePage/HomePage'
-import TransferPage from '../TransferPage/TransferPage'
-import Login from '../Login/Login'
-import SenderInfo from '../SenderInfo/SenderInfo'
-import PaymentInfo from '../PaymentInfo/PaymentInfo'
-import ReceiverInfo from '../ReceiverInfo/ReceiverInfo'
-import FraudPage from '../FraudPage/FraudPage'
-import Summary from '../Summary/Summary'
-import Success from '../Success/Success'
-import Status from '../StatusPage/StatusPage'
+import HomePage from '../HomePage/HomePage';
+import TransferPage from '../TransferPage/TransferPage';
+import LogIn from '../LogIn/Login';
+import SenderInfo from '../SenderInfo/SenderInfo';
+import PaymentInfo from '../PaymentInfo/PaymentInfo';
+import ReceiverInfo from '../ReceiverInfo/ReceiverInfo';
+import FraudPage from '../FraudPage/FraudPage';
+import Summary from '../Summary/Summary';
+import Success from '../SuccessPage/SuccessPage';
+import Status from '../StatusPage/StatusPage';
 
 import './App.css';
-import homePage from '../HomePage/HomePage';
+
 
 
 function App() {
@@ -91,7 +91,7 @@ function App() {
               <Redirect to="/" />
               :
               // Otherwise, show the login page
-              <Login />
+              <LogIn />
             }
           </Route>
 
@@ -240,7 +240,5 @@ function App() {
     </Router>
   );
 }
-
-export default App;
 
 export default App;

@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 
 
 
-function homePage() {
+function homePage(props) {
 
     const [value, setValue] = React.useState('1');
 

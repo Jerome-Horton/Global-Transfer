@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import './paymentInfo.css'
 
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -8,7 +9,7 @@ import Container from '@mui/material/Container';
 
 
 
-function cardInfo() {
+function cardInfo(props) {
 
     const dispatch = useDispatch()
 

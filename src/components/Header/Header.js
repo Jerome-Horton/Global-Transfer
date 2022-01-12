@@ -12,7 +12,7 @@ import swal from 'sweetalert';
 import './Header.css'
 
 
-const Header = () => {
+const Header = (props) => {
 
 
     const user = useSelector(state => state.user)

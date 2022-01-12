@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 
 
 
-function Login() {
+function LogIn(props) {
 
     // let navigate = useHistory();
     const dispatch = useDispatch();
@@ -21,25 +21,25 @@ function Login() {
     function LoginBtn() {
         if (username && password) {
             dispatch({
-              type: 'LOGIN',
-              payload: {
-                username: username,
-                password: password,
-              },
+                type: 'LOGIN',
+                payload: {
+                    username: username,
+                    password: password,
+                },
             });
-          }
-        }; // end login
+        }
+    }; // end login
 
     return (
 
         <div >
 
-                <Container className='white-container-login' maxWidth="xl">
+            <Container className='white-container-login' maxWidth="xl">
                 <h1 className='complete-login'>Log into Your <br /> GlobalTransfer Profile </h1>
-                <input className="input-field-login" placeholder='USERNAME' type="text" 
-                value={username} onChange={(e)=>{setUsername(e.target.value)}}/>
-                <input className="input-field-login" placeholder='PASSWORD' type="password" 
-                value={password} onChange={(e)=>{setPassword(e.target.value)}}
+                <input className="input-field-login" placeholder='USERNAME' type="text"
+                    value={username} onChange={(e) => { setUsername(e.target.value) }} />
+                <input className="input-field-login" placeholder='PASSWORD' type="password"
+                    value={password} onChange={(e) => { setPassword(e.target.value) }}
                 />
                 <div className='forget-container'>
 
@@ -47,7 +47,7 @@ function Login() {
                         Forgot Password?
                     </a> */}
                     <p className="forget-link-text">Don't have an account?</p>
-                    <Button className='signUp-btn' component = {Link} to = "/sender-info" variant="contained">
+                    <Button className='signUp-btn' component={Link} to="/sender-info" variant="contained">
                         Sign Up
                     </Button>
 
@@ -63,4 +63,4 @@ function Login() {
 
 }
 
-export default Login;
+export default LogIn;

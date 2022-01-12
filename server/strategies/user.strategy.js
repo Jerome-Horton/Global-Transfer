@@ -9,7 +9,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((id, done) => {
   pool
-    .query('SELECT * FROM "users" WHERE id = $1', [id])
+    .query('SELECT * FROM "user" WHERE id = $1', [id])
     .then((result) => {
       // Handle Errors
       const user = result && result.rows && result.rows[0];
@@ -37,9 +37,9 @@ passport.deserializeUser((id, done) => {
 // Does actual work of logging in
 passport.use(
   'local',
-  new LocalStrategy((email, password, done) => {
+  new LocalStrategy((username, password, done) => {
     pool
-      .query('SELECT * FROM "users" WHERE username = $1', [email])
+      .query('SELECT * FROM "user" WHERE username = $1', [username])
       .then((result) => {
         const user = result && result.rows && result.rows[0];
         if (user && encryptLib.comparePassword(password, user.password)) {
@@ -54,7 +54,7 @@ passport.use(
         }
       })
       .catch((error) => {
-        console.log('Error with query for users ', error);
+        console.log('Error with query for user ', error);
         // done takes an error (we have one) and a user (null in this case)
         // this will result in the server returning a 500 status code
         done(error, null);

@@ -9,7 +9,7 @@ import './SenderInfo.css'
 
 
 
-function SenderInfo() {
+function SenderInfo(props) {
 
     let navigate = useHistory();
     const dispatch = useDispatch()
@@ -41,8 +41,6 @@ function SenderInfo() {
         return (
 
             <div >
-
-                <Header />
 
                 <Container className='white-container-sender' maxWidth="xl">
                     <p className='sender-info-text'>Sender Information</p>

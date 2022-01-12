@@ -52,6 +52,15 @@
     margin-bottom: 30px !important;
 }
 
+.input-field.render-value{
+    border-bottom: none;
+    color: rgb(207, 207, 207);
+}
+
+.input-field.render-large-value{
+    border-bottom: none;
+}
+
 .input-field::placeholder{
     color: rgb(207, 207, 207);
 }

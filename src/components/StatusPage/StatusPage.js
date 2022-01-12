@@ -8,7 +8,7 @@ import Container from '@mui/material/Container';
 
 import './StatusPage.css'
 
-function statusPage() {
+function statusPage(props) {
 
     const dispatch = useDispatch()
     let navigate = useHistory();

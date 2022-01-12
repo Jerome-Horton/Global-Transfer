@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import './FraudPage.css';
 import { useHistory} from 'react-router';
 
-function FraudPage() {
+function FraudPage(props) {
 
     let navigate = useHistory();
 

@@ -10,7 +10,7 @@ import swal from 'sweetalert2';
 import Axios from 'axios';
 
 
-function Summary() {
+function Summary(props) {
 
     const dispatch = useDispatch()
     let navigate = useHistory();

@@ -1,4 +1,3 @@
-import React from 'react';
 import React,{useState} from 'react';
 import {useSelector,useDispatch} from 'react-redux'
 import { useHistory } from 'react-router';
@@ -28,7 +27,7 @@ import moment from 'moment';
 
 
 
-function Started() {
+function Started(props) {
 
     let navigate = useHistory();
     const dispatch = useDispatch()
