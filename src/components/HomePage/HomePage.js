@@ -66,10 +66,10 @@ function homePage(props) {
         const convertedValue = parseFloat(currencyList[index].exchange_rate) * amount
 
         const data = {
-            amount: parseFloat(amount),
+            amount: parseFloat(amount).toFixed(2),
             selectCountry,
             selectCountryShortName: currencyList[index].short_name,
-            convertedValue,
+            convertedValue: convertedValue.toFixed(2),
             conversionRate: currencyList[index].exchange_rate,
             currencyName: currencyList[index].currency_name,
             countryFullName: currencyList[index].full_name,

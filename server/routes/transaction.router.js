@@ -59,8 +59,12 @@ router.post('/',rejectUnauthenticated,(req, res) => {
     })
 });
 
+// WHERE
+//   legal_first_name = 'Tom' AND legal_last_name = 'Tom' AND reference_number  = '420247128'
+
 // Post route to track transaction status
 router.post('/tracking',(req, res) => {
+  console.log(req.body)
   const { firstName,lastName,reference
     } = req.body
   let queryText = `SELECT full_name, sent_amount, receiving_amount, legal_first_name, 

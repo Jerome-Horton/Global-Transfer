@@ -1,8 +1,8 @@
 .white-container-track{
     background-color: white;
-    width: 80% !important;
+    min-width: 87% !important;
     margin-top: 30px;
-    height: 60vh;
+    min-height: 80vh;
     text-align: center;
     padding: 0px !important;
 }

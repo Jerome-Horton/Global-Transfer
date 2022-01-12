@@ -10,7 +10,7 @@ function FraudPage(props) {
     let navigate = useHistory();
 
     function reviewAndSend() {
-        navigate('/Summary')
+        navigate.push('/Summary')
     }
 
     return (

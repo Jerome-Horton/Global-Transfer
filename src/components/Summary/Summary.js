@@ -6,8 +6,8 @@ import './Summary.css';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import swal from 'sweetalert2';
-import Axios from 'axios';
+import swal from 'sweetalert';
+import axios from 'axios';
 
 
 function Summary(props) {

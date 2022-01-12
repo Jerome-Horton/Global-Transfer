@@ -69,7 +69,7 @@ const Header = (props) => {
                     </Grid>
                     {user.id &&
                         <Grid textAlign="center" item xs={4} md={4} >
-                            <h1 className='title-text'>Welcome : {user.firstName}</h1>
+                            <h1 className='title-text'>Welcome : {user.firstname}</h1>
                         </Grid>
                     }
                     {/* <Grid textAlign="center" item xs={3} md={2}>

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function* fetchTransaction(action) {
   try {
-
+    console.log(action.payload)
     const response = yield axios.post('/api/transaction/tracking',action.payload)
 
     yield put({ type: 'SHOW_TRANSACTION_INFO', payload : response.data[0] })
