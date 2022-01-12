@@ -26,7 +26,7 @@ function cardInfo() {
     const [expiration, setExpiration] = useState("")
 
 
-    function summary() {
+    function saveInfo() {
         const data = {
             ...userInfo, cardType, cardNumber, cardTitle, cvv, billingAddress, expiration
         }
@@ -98,7 +98,7 @@ function cardInfo() {
                     <Grid item xs={12} md={12}>
                         <div className='sender-btn-container'>
 
-                            <Button className='card-info-btn' onClick={summary} variant="contained">
+                            <Button className='card-info-btn' onClick={saveInfo} variant="contained">
                                 Save Card and Sign Up</Button>
                         </div>
                     </Grid>

@@ -1,4 +1,4 @@
-import React from 'react;
+import React from 'react';
 import { useHistory } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
 
@@ -19,7 +19,7 @@ const Header = () => {
     const dispatch = useDispatch()
     let navigate = useHistory();
 
-    
+
     function handleSend() {
         navigate.push('/')
     }
