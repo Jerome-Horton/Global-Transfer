@@ -145,7 +145,7 @@ function Started(props) {
                                                     >
                                                         <FormControlLabel style={{ color: "black" }} value="pickup" control={<Radio />} label="Cash Pickup" />
                                                         <FormControlLabel style={{ color: "black" }} value="wallet" control={<Radio />} label="Mobile Wallet" />
-                                                        <p className='fee'>Transfer Fee: $O.00 </p>
+                                                        <p className='fee'>Transfer Fee: $0.00 </p>
                                                     </RadioGroup>
                                                 </Grid>
 
