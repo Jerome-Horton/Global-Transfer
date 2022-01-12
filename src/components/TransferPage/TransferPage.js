@@ -22,8 +22,9 @@ import TabList from '@mui/lab/TabList';
 import TextField from '@mui/material/TextField';
 import TabPanel from '@mui/lab/TabPanel';
 import USFlag from "../../assets/images/flag.png"
-import LBDFlag from "../../assets/images/lbdflag.png"
-import canFlag from '../../assets/images/can.png'
+// import LBDFlag from "../../assets/images/lbdflag.png"
+// import canFlag from '../../assets/images/can.png'
+import moment from 'moment';
 
 
 
@@ -145,12 +146,12 @@ function Started() {
                                                     >
                                                         <FormControlLabel style={{ color: "black" }} value="pickup" control={<Radio />} label="Cash Pickup" />
                                                         <FormControlLabel style={{ color: "black" }} value="wallet" control={<Radio />} label="Mobile Wallet" />
-                                                        <p className='fee'>Transfer Fee: <span><input className='fee-input' placeholder='$0.00' type="text" /></span> </p>
+                                                        <p className='fee'>Transfer Fee: $O.00 </p>
                                                     </RadioGroup>
                                                 </Grid>
 
                                             </Grid>
-                                            <p className='money-note'>Money Available by: Tuesday, December 14, 2021</p>
+                                            <p className='money-note'>Money Available by: {moment().format('MMMM Do YYYY')} </p>
                                             <Button className='get-started-btn' onClick={() => getStarted()} variant="contained">
                                             {user.id ? "Get Started" : "Sign Up/Login to get started"}
                                             </Button>
