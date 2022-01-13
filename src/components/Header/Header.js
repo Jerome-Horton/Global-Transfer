@@ -24,9 +24,9 @@ const Header = (props) => {
         navigate.push('/')
     }
 
-    // function handleTrack() {
-    //     navigate.push('/')
-    // }
+    function myAccount() {
+        navigate.push('/myAccount')
+    }
 
     const handleLoginClick = () => {
         navigate.push('/login')
@@ -87,12 +87,6 @@ const Header = (props) => {
                             Send/Track Money
                         </li>
                     </Grid>
-                    {/* <Grid  className='nav-items'style={{cursor:"pointer"}}  textAlign="center" item xs={3} md={2}>
-        <li onClick={()=>handleTrack()}>
-
-            Track+Recieve
-        </li>
-        </Grid> */}
 
                     {!user.id &&
                         <>
@@ -118,6 +112,15 @@ const Header = (props) => {
 
                                 Sign Out
                             </li>
+                        </Grid>
+                    }
+
+                    {user.id &&
+                        <Grid className='nav-items' style={{ cursor: "pointer" }} textAlign="center" item xs={3} md={2}>
+                        <li onClick={() => myAccount()}>
+
+                            My Account
+                        </li>
                         </Grid>
                     }
                 </Grid>

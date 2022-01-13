@@ -32,6 +32,8 @@ import Summary from '../Summary/Summary';
 import Success from '../SuccessPage/SuccessPage';
 import Status from '../StatusPage/StatusPage';
 
+import MyAccount from '../MyAccount/MyAccount';
+
 import './App.css';
 
 
@@ -123,11 +125,16 @@ function App() {
             <Summary/>
           </ProtectedRoute>
 
-
+          <ProtectedRoute
+            exact
+            path="/myAccount"
+          >
+            <MyAccount/>
+          </ProtectedRoute>
           
 
           <Route
-            // shows AboutPage at all times (logged in or not)
+            
             exact
             path="/getStarted"
           >
