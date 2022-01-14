@@ -21,25 +21,19 @@ function myAccount(props) {
 
     // useEffect(() => {
     //     dispatch({
-    //       type:'FETCH_MED'
-    //     })
-    //     dispatch({
-    //       type:'FETCH_KID'
+    //       type:
     //     });
+    //    
     // }
 
-    // create a reducer to get the transaction history and a put route to update it.
+    // function handleEdit() {
+    //     // dispatch({ type: '' })
+    //     // navigate.push('')
+    // }
 
-    // useEffect(() => {
-
-    //     // return () => {
-    //     //     dispatch({ type: 'CLEAR_TRACKING_INFO' })
-    //     // }
-    // }, []);
-
-    // function homeBtn() {
-    //     // dispatch({ type: 'CLEAR_TRACKING_INFO' })
-    //     // navigate.push('/')
+     // function handleUpdate() {
+    //     // dispatch({ type: '' })
+    //     // navigate.push()
     // }
 
     return (
