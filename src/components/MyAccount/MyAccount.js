@@ -17,6 +17,16 @@ function myAccount(props) {
 
     const dispatch = useDispatch()
     let navigate = useHistory();
+    const payment = useSelector((store) => store.updatePaymentInformation);
+
+    // useEffect(() => {
+    //     dispatch({
+    //       type:'FETCH_MED'
+    //     })
+    //     dispatch({
+    //       type:'FETCH_KID'
+    //     });
+    // }
 
     // create a reducer to get the transaction history and a put route to update it.
 
@@ -35,51 +45,8 @@ function myAccount(props) {
     return (
 
         <div>
-{/* 
-            <Container className='white-container-transfer' maxWidth="xl">
-                <p className='transfer-status'>Contact Information</p>
-            <Grid>
-                <table>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Middle Name</th>
-                        <th>Country</th>
-                    </tr>
-                    <tr>
-                        <td>Alfreds Futterkiste</td>
-                        <td>Maria Anders</td>
-                        <td>Germany</td>
-                    </tr>
-                    <tr>
-                        <td>Centro comercial Moctezuma</td>
-                        <td>Francisco Chang</td>
-                        <td>Mexico</td>
-                    </tr>
-                    <tr>
-                        <td>Ernst Handel</td>
-                        <td>Roland Mendel</td>
-                        <td>Austria</td>
-                    </tr>
-                    <tr>
-                        <td>Island Trading</td>
-                        <td>Helen Bennett</td>
-                        <td>UK</td>
-                    </tr>
-                    <tr>
-                        <td>Laughing Bacchus Winecellars</td>
-                        <td>Yoshi Tannamuri</td>
-                        <td>Canada</td>
-                    </tr>
-                    <tr>
-                        <td>Magazzini Alimentari Riuniti</td>
-                        <td>Giovanni Rovelli</td>
-                        <td>Italy</td>
-                    </tr>
-                    
-                </table>    */}
 
-<Container className='white-container-transfer' maxWidth="xl">
+            <Container className='white-container-transfer' maxWidth="xl">
 
                 <p className='transfer-status'>Payment Information</p>
 

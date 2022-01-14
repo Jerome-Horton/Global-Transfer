@@ -23,7 +23,10 @@ const receiverInfo = (state = {}, action) => {
   }
 };
 
-export default combineReducers({
-  senderInfo,
-  receiverInfo
-});
+
+
+  export default combineReducers({
+    senderInfo,
+    receiverInfo,
+    updatePaymentInformation
+  });

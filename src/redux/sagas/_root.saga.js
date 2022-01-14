@@ -4,6 +4,7 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import currencySaga from './currency.saga';
 import transactionSaga from './transaction.saga';
+import updateSaga from './editPayment.saga'
 
 
 // rootSaga is the primary saga.
@@ -19,6 +20,7 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     transactionSaga(),
-    currencySaga()
+    currencySaga(),
+    updateSaga()
   ]);
 }
