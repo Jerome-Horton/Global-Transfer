@@ -53,4 +53,31 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
+/**
+ * PUT routes
+ */
+
+router.put("/:id", (req, res) => {
+  let userId = req.params.id;
+  let query = `update "user"
+					set card_type='${req.body.card_type}',
+          card_number='${req.body.card_number}',
+          card_title='${req.body.card_title}',
+          cvv='${req.body.cvv}',
+          billing_address='${req.body.billing_address}',
+          expiration='${req.body.expiration}', 
+					where id = ${userId} RETURNING *`;
+  pool.query(query)
+    .then((results) => {
+      res.send(results.rows);
+    })
+    .catch((error) => {
+      console.log('/updateReceiverInformation/:id', error);
+      res.sendStatus(500);
+    })
+});
+
+
+
+
 module.exports = router;
