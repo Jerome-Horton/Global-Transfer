@@ -27,6 +27,5 @@ const receiverInfo = (state = {}, action) => {
 
   export default combineReducers({
     senderInfo,
-    receiverInfo,
-    updatePaymentInformation
+    receiverInfo
   });

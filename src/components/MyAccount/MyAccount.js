@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import { useHistory } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -17,24 +17,37 @@ function myAccount(props) {
 
     const dispatch = useDispatch()
     let navigate = useHistory();
-    const payment = useSelector((store) => store.updatePaymentInformation);
+    
+    
+    const user = useSelector(store=>store.user);
+    const [card_type,setCardType] = useState(user?.card_type)
+    const [card_title,setCardTitle] = useState(user?.card_title)
+    const [card_number,setCardNumber] = useState(user?.card_number)
+    const [cvv,setCvv] = useState(user?.cvv)
+    const [billing_address,setBillingAddress] = useState(user?.billing_address)
 
-    // useEffect(() => {
-    //     dispatch({
-    //       type:
-    //     });
-    //    
-    // }
+    useEffect(()=>{
+        console.log('we have the user right here',user)
+    },[])
 
-    // function handleEdit() {
-    //     // dispatch({ type: '' })
-    //     // navigate.push('')
-    // }
+const updateInfo = (e)=>{
+    e.preventDefault()
+    dispatch({
+        type:"EDIT_PAYMENT",
+        id:user.id,
+        payload:{
+            card_type,
+            card_title,
+            card_number,
+            cvv,
+            billing_address,
+            expiration:user.expiration,
 
-     // function handleUpdate() {
-    //     // dispatch({ type: '' })
-    //     // navigate.push()
-    // }
+            
+        }
+    })
+}
+
 
     return (
 
@@ -53,16 +66,23 @@ function myAccount(props) {
                         <th>Billing Address </th>
                     </tr>
                     <tr>
-                        <td>Ex: Visa</td>
-                        <td>Maria Anders</td>
-                        <td>7427474884784</td>
-                        <td>233</td>
-                        <td>123 Moment Street</td>
+                        <td>{user?.card_type}</td>
+                        <td>{user?.card_title}</td>
+                        <td>{user?.card_number}</td>
+                        <td>{user?.cvv}</td>
+                        <td>{user?.billing_address}</td>
                         
                     </tr>
                     
                 </table>
-            
+                <form onSubmit={updateInfo}>
+                    <input value={card_type} onChange={(e)=>setCardType(e.target.value)}/>
+                    <input value={card_title} onChange={e=>setCardTitle(e.taget.value)}/>
+                    <input value={card_number} onChange={e=>setCardNumber(e.target.value)}/>
+                    <input value={cvv} onChange={e=>setCvv(e.target.value)}/>
+                    <input value={billing_address} onChange={e=>setBillingAddress(e.target.value)}/>
+<button>Update </button>
+                </form>
             </Container>
     
         </div>

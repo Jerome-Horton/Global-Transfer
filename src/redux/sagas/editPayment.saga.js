@@ -23,7 +23,7 @@ function* editPayment(action) {
         console.log('editPayment action.payload', action.payload)
         yield axios({
             method: 'PUT',
-            url: `/user/${action.payload.id}`,
+            url: `api/user/${action.id}`,
             data: action.payload
         })
         yield put({
