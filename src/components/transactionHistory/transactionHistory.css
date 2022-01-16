@@ -18,3 +18,8 @@
     color: rgb(61, 60, 60);
     border-bottom: 2px solid gainsboro;
 }
+
+.transfer-status-grid{
+    text-align: start !important;
+    padding: 0px 40px ;
+}

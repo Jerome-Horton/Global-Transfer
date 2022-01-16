@@ -16,7 +16,7 @@ import './MyAccount.css';
 function myAccount(props) {
 
     const dispatch = useDispatch()
-    let navigate = useHistory();
+    // let navigate = useHistory();
 
 
     const user = useSelector(store => store.user);

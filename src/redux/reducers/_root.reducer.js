@@ -6,6 +6,7 @@ import transaction from './transaction.reducer'
 import userInfo from './userInfo.reducer';
 import success from './success.reducer'
 import tracking from './trackingInfo.reducer'
+import transactionHistory from "./transactionHistory.reducer"
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   transaction,
   userInfo,
   success,
-  tracking
+  tracking,
+  transactionHistory
 });
 
 export default rootReducer;

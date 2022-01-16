@@ -39,16 +39,10 @@ const {
 router.get('/', rejectUnauthenticated, (req, res) => {
   console.log('req.user', req.user);
   let queryText;
-
-
-  // Conditionally choose a SQL query, based on a user's role:
-
-    queryText = `select *
+  queryText = `select *
                 FROM "transactions"
                 WHERE "sender_id" = '${req.user.id}'
                 `;
- 
-
   pool.query(queryText)
     .then((result) => {
       res.send(result.rows);
