@@ -20,12 +20,12 @@ function myAccount(props) {
 
 
     const user = useSelector(store => store.user);
-    const [card_type, setCardType] = useState(user?.card_type)
-    const [card_title, setCardTitle] = useState(user?.card_title)
-    const [card_number, setCardNumber] = useState(user?.card_number)
+    const [card_type, setCardType] = useState("")
+    const [card_title, setCardTitle] = useState("")
+    const [card_number, setCardNumber] = useState("")
     const [cvv, setCvv] = useState("")
-    const [billing_address, setBillingAddress] = useState(user?.billing_address)
-    const [expiration, setExpiration] = useState(user?.expiration)
+    const [billing_address, setBillingAddress] = useState("")
+    const [expiration, setExpiration] = useState("")
     const [change, setChange] = useState(false);
 
 
@@ -49,7 +49,12 @@ function myAccount(props) {
         dispatch({
             type: "FETCH_USER"
         })
-        setCvv("");
+        setCardType(""),
+        setCardTitle(""),
+        setCardNumber(""),
+        setCvv(""),
+        setBillingAddress(""),
+        setExpiration("");
     }
 
 
