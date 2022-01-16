@@ -61,13 +61,13 @@ router.put("/:id", (req, res) => {
   let {id} = req.params;
   console.log('id',id)
   let query = `update "user"
-					set card_type='${req.body.card_type}',
-          card_number='${req.body.card_number}',
-          card_title='${req.body.card_title}',
-          cvv='${req.body.cvv}',
-          billing_address='${req.body.billing_address}',
-          expiration='${req.body.expiration}', 
-					where id = ${id} RETURNING *`;
+					set "card_type"='${req.body.card_type}',
+          "card_number"='${req.body.card_number}',
+          "card_title"='${req.body.card_title}',
+          "cvv"='${req.body.cvv}',
+          "billing_address"='${req.body.billing_address}',
+          "expiration"='${req.body.expiration}'
+					where "id" = ${id} RETURNING *`;
   pool.query(query)
     .then((results) => {
       res.send(results.rows);

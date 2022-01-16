@@ -28,6 +28,10 @@ const Header = (props) => {
         navigate.push('/myAccount')
     }
 
+    function transactionHistory() {
+        navigate.push('/transactionHistory')
+    }
+
     const handleLoginClick = () => {
         navigate.push('/login')
     }
@@ -120,6 +124,15 @@ const Header = (props) => {
                         <li onClick={() => myAccount()}>
 
                             My Account
+                        </li>
+                        </Grid>
+                    }
+
+                    {user.id &&
+                        <Grid className='nav-items' style={{ cursor: "pointer" }} textAlign="center" item xs={3} md={2}>
+                        <li onClick={() => transactionHistory()}>
+
+                            Transactions History
                         </li>
                         </Grid>
                     }

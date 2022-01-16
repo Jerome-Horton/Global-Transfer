@@ -33,6 +33,7 @@ import Success from '../SuccessPage/SuccessPage';
 import Status from '../StatusPage/StatusPage';
 
 import MyAccount from '../MyAccount/MyAccount';
+import TransactionHistory from '../transactionHistory/transactionHistory';
 
 import './App.css';
 
@@ -132,6 +133,12 @@ function App() {
             <MyAccount/>
           </ProtectedRoute>
           
+          <ProtectedRoute
+            exact
+            path="/transactionHistory"
+          >
+            <TransactionHistory/>
+          </ProtectedRoute>
 
           <Route
             
@@ -140,6 +147,8 @@ function App() {
           >
             <TransferPage />
           </Route>
+
+         
 
 
 
