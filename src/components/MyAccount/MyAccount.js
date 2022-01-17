@@ -9,6 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import {Grid} from '@mui/material';
 import Container from '@mui/material/Container';
 
 import './MyAccount.css';
@@ -66,36 +67,40 @@ function myAccount(props) {
 
                 <p className='transfer-status'>Payment Information</p>
 
-                <table>
-                    <tr>
-                        <th>Card Type</th>
-                        <th>Card Title</th>
-                        <th>Card Number</th>
-                        <th>CVV</th>
-                        <th>Billing Address </th>
-                        <th>expiration </th>
-                    </tr>
-                    <tr>
-                        <td>{user?.card_type}</td>
-                        <td>{user?.card_title}</td>
-                        <td>{user?.card_number}</td>
-                        <td>{user?.cvv}</td>
-                        {/* billing address not showing up */}
-                        <td>{user?.billing_address}</td> 
-                        <td>{user?.expiration}</td>
-                    </tr>
-
+                <table className='card'>
+                    <tbody>
+                        <tr>
+                            <th>Card Type</th>
+                            <th>Name</th>
+                            <th>Card Number</th>
+                            <th>CVV</th>
+                            <th>Billing Address </th>
+                            <th>expiration </th>
+                        </tr>
+                        <tr>
+                            <td>{user?.card_type}</td>
+                            <td>{user?.card_title}</td>
+                            <td>{user?.card_number}</td>
+                            <td>{user?.cvv}</td>
+                            {/* billing address not showing up */}
+                            <td>{user?.billing_address}</td> 
+                            <td>{user?.expiration}</td>
+                        </tr>
+                    </tbody>
                 </table>
-                <form onSubmit={updateInfo}>
-                    <input value={card_type} onChange={(e) => setCardType(e.target.value)} placeholder='Card Type'/>
-                    <input value={card_title} onChange={e => setCardTitle(e.target.value)} placeholder='Card Title'/>
-                    <input value={card_number} onChange={e => setCardNumber(e.target.value)} placeholder='Card Number'/>
-                    <input value={cvv} onChange={e => setCvv(e.target.value)} placeholder='CVV'/>
-                    <input value={billing_address} onChange={e => setBillingAddress(e.target.value)} placeholder='Billing Address'/>
-                    <input value={expiration} onChange={e => setExpiration(e.target.value)} placeholder='EXP'/>
-                    <button>Update </button>
-                </form>
-                
+                <Grid >
+                    <form onSubmit={updateInfo}>
+                        
+                        <input className='input' value={card_type} onChange={(e) => setCardType(e.target.value)} placeholder='Card Type'/>
+                        <input className='input' value={card_title} onChange={e => setCardTitle(e.target.value)} placeholder='Card Title'/>
+                        <input className='input' value={card_number} onChange={e => setCardNumber(e.target.value)} placeholder='Card Number'/>
+                        <input className='input' value={cvv} onChange={e => setCvv(e.target.value)} placeholder='CVV'/>
+                        <input className='input' value={billing_address} onChange={e => setBillingAddress(e.target.value)} placeholder='Billing Address'/>
+                        <input className='input' value={expiration} onChange={e => setExpiration(e.target.value)} placeholder='Expiration Date'/>
+                        <button className='button'>Update </button>
+                       
+                    </form>
+                </Grid>
             </Container>
 
         </div>

@@ -92,7 +92,7 @@ function cardInfo(props) {
                         <input className='card-input-info'
                             onChange={(e) => { setCardTitle(e.target.value) }}
                             value={cardTitle}
-                            placeholder='Card Title' type="text" />
+                            placeholder='Name on Card' type="text" />
                     </Grid>
                 </Grid>
                 <Grid className='grid-card' container spacing={2}>

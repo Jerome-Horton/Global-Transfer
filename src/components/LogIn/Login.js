@@ -42,10 +42,6 @@ function LogIn(props) {
                     value={password} onChange={(e) => { setPassword(e.target.value) }}
                 />
                 <div className='forget-container'>
-
-                    {/* <a href="" className="forget-link">
-                        Forgot Password?
-                    </a> */}
                     <p className="forget-link-text">Don't have an account?</p>
                     <Button className='signUp-btn' component={Link} to="/sender-info" variant="contained">
                         Sign Up
