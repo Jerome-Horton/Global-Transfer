@@ -78,10 +78,8 @@ router.post('/tracking', (req, res) => {
 router.delete("/:id",rejectUnauthenticated, (req, res) => {
   console.log('req.params.id', req.params.id);
   let query = `delete
-        from transactions
-        where "id" = ${req.params.id}`;
-
-
+        from "transactions"
+        where "sender_id" = ${req.params.id}`;
   pool.query(query)
     .then((results) => {
       res.send(results.rows);
@@ -91,7 +89,5 @@ router.delete("/:id",rejectUnauthenticated, (req, res) => {
       res.sendStatus(500);
     })
 });
-
-
 
 module.exports = router;

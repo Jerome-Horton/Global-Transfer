@@ -3,11 +3,9 @@ import axios from 'axios';
 
 function* deleteTransactions(action) {
         try {
-            console.log('DELETE-Payment action.payload', action.payload)
             yield axios({
                 method: 'DELETE',
-                url: `api/transaction/${action.id}`,
-                payload: action.payload,
+                url: `api/transaction/${action.payload.id}`,
             })
             yield put({
                 type: 'DELETE_TRANSFER'

@@ -30,10 +30,11 @@ function transactionHistory(props) {
 
     }, [])
 
-    const deleteBtn = () => {
+    const deleteBtn = (id) => {
+        console.log('here is id',id);
 
-        dispatch({ type: 'GET_TRANSACTIONS' });
-        dispatch({ type: 'DELETE_TRANSACTION' });
+        dispatch({ type: 'GET_TRANSACTIONS'});
+        dispatch({ type: 'DELETE_TRANSACTION', payload:{id:id}  });
 
 
     }
@@ -81,7 +82,7 @@ function transactionHistory(props) {
 
                                 </Grid>
                                 
-                                <button className='delete-btn' onClick={deleteBtn} >Delete</button>
+                                <button className='delete-btn' onClick={()=> deleteBtn(v.id)} >Delete</button>
                                 
                             </Grid>
                         </Container>

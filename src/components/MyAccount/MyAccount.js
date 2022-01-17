@@ -80,20 +80,22 @@ function myAccount(props) {
                         <td>{user?.card_title}</td>
                         <td>{user?.card_number}</td>
                         <td>{user?.cvv}</td>
-                        <td>{user?.billing_address}</td>
+                        {/* billing address not showing up */}
+                        <td>{user?.billing_address}</td> 
                         <td>{user?.expiration}</td>
                     </tr>
 
                 </table>
                 <form onSubmit={updateInfo}>
-                    <input value={card_type} onChange={(e) => setCardType(e.target.value)} />
-                    <input value={card_title} onChange={e => setCardTitle(e.target.value)} />
-                    <input value={card_number} onChange={e => setCardNumber(e.target.value)} />
-                    <input value={cvv} onChange={e => setCvv(e.target.value)} />
-                    <input value={billing_address} onChange={e => setBillingAddress(e.target.value)} />
-                    <input value={expiration} onChange={e => setExpiration(e.target.value)} />
+                    <input value={card_type} onChange={(e) => setCardType(e.target.value)} placeholder='Card Type'/>
+                    <input value={card_title} onChange={e => setCardTitle(e.target.value)} placeholder='Card Title'/>
+                    <input value={card_number} onChange={e => setCardNumber(e.target.value)} placeholder='Card Number'/>
+                    <input value={cvv} onChange={e => setCvv(e.target.value)} placeholder='CVV'/>
+                    <input value={billing_address} onChange={e => setBillingAddress(e.target.value)} placeholder='Billing Address'/>
+                    <input value={expiration} onChange={e => setExpiration(e.target.value)} placeholder='EXP'/>
                     <button>Update </button>
                 </form>
+                
             </Container>
 
         </div>
