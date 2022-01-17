@@ -80,7 +80,9 @@ function transactionHistory(props) {
 
 
                                 </Grid>
-                                <button onClick={deleteBtn}>delete</button>
+                                
+                                <button className='delete-btn' onClick={deleteBtn} >Delete</button>
+                                
                             </Grid>
                         </Container>
                     )
