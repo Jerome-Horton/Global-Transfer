@@ -7,7 +7,7 @@ function* deleteTransactions(action) {
             yield axios({
                 method: 'DELETE',
                 url: `api/transaction/${action.id}`,
-                data: action.payload
+                payload: action.payload,
             })
             yield put({
                 type: 'DELETE_TRANSFER'

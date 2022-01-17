@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -16,38 +16,27 @@ import './transactionHistory.css';
 function transactionHistory(props) {
 
     const transaction = useSelector(store => store?.transactionHistory);
-    const receiver = useSelector(store => store.userInfo);
+    // const receiver = useSelector(store => store.userInfo);
     const dispatch = useDispatch();
 
 
-
-    // make function to dispatch fetch transaction history
-    // const getHistory = () =>  {
-    //     dispatch({ type: 'FETCH_USER' });
-
-    // }
-
-console.log("transaction",transaction);
     // call that function in useEffect with empty 
-    
-    useEffect(()=>{
-           
-              dispatch({ type: 'GET_TRANSACTIONS' });
-            
-    },[])
 
-    // "legal_first_name",
-    // "legal_middle_name",
-    // "legal_last_name",
-    // "sent_amount",
-    // "receiving_amount",
-    // "payment_method" ,
-    // "receiving_method" ,
-    // "reference_number",
-    // "date" DATE   NOW(),
-    // "sender_id"  ,
-    // "currency_id" ,
+    useEffect(() => {
 
+        dispatch({ type: 'GET_TRANSACTIONS' });
+
+
+
+    }, [])
+
+    const deleteBtn = () => {
+
+        dispatch({ type: 'GET_TRANSACTIONS' });
+        dispatch({ type: 'DELETE_TRANSACTION' });
+
+
+    }
 
     return (
 
@@ -55,31 +44,55 @@ console.log("transaction",transaction);
 
             <Container className='white-container-transfer' maxWidth="xl">
 
-                <p className='transfer-status'>Transactions</p>
-                
-                {transaction.length ? transaction?.map((v,index)=>{
-                    console.log('v',v)
-                    return(
-                    <Container key={index}>
+                <p className='transfer-status'>Transfer History</p>
 
-                    <Grid justifyContent="around" className='transfer-status-grid' container spacing={2}>
-                                <Grid item xs={12} sm={6} >
-                    <p>Receiver Name: {v.legal_first_name + " " +
-                                        v.legal_last_name} </p>
-                        </Grid>
-                    </Grid>    
-                                </Container>
-                   
-                    )    
-                }) :""}
+                {transaction.length ? transaction.map((v, index) => {
+
+                    return (
+                        <Container key={index}>
 
 
-                </Container>
-    
-    </div>
+                            <Grid justifyContent="around" className='transfer-status-grid' container spacing={2}>
+                                {/* <Grid item xs={12} sm={6} >
+                                    <h4 className='transfer-header'>Receiver Name:</h4>
+                                    <p className='transfer-text'>{v.legal_first_name + " " + v.legal_last_name}</p>
+                                </Grid> */}
+
+                                <Grid justifyContent="around" className='transfer-status-grid' container spacing={2}>
+                                    <Grid item xs={12} sm={6} >
+                                        <h4 className='transfer-header'>Receiver Name:</h4>
+                                        <p className='transfer-text'>{v.legal_first_name + " " + v.legal_last_name}</p>
+                                    </Grid>
+
+                                    <Grid item xs={12} sm={6} >
+                                        <h4 className='transfer-header'>Receive Method:</h4>
+                                        <p className='transfer-text'>{v.receiving_method}</p>
+                                    </Grid>
+
+                                    <Grid item xs={12} sm={6} >
+                                        <h4 className='transfer-header'>Sent Amount:</h4>
+                                        <p className='transfer-text'>{v.sent_amount} USD</p>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} >
+                                        <h4 className='transfer-header'>Receiving Amount:</h4>
+                                        <p className='transfer-text'>{v.receiving_amount} {v.currency_name}</p>
+                                    </Grid>
 
 
-);
+                                </Grid>
+                                <button onClick={deleteBtn}>delete</button>
+                            </Grid>
+                        </Container>
+                    )
+                }) : ""}
+
+
+            </Container>
+
+        </div>
+
+
+    );
 }
 
 export default transactionHistory;

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-function* fetchOneUser(action) {
+function* fetchOneTransfer(action) {
     try {
         const response = yield axios({
             method: 'GET',
@@ -36,7 +36,7 @@ function* editPayment(action) {
 
 
 function* updateSaga() {
-    yield takeLatest('FETCH_ONE_USER', fetchOneUser);
+    yield takeLatest('FETCH_ONE_USER', fetchOneTransfer);
     yield takeLatest('EDIT_PAYMENT', editPayment);
 }
 
