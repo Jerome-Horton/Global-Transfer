@@ -1,4 +1,7 @@
 import React from 'react';
+import Container from '@mui/material/Container';
+import './AboutPage.css';
+
 
 // This is one of our simplest components
 // It doesn't have local state,
@@ -7,11 +10,25 @@ import React from 'react';
 
 function AboutPage() {
   return (
-    <div className="container">
+    <Container className='white-container-transfer' maxWidth="xl">
+
+      <p className='transfer-status'>Our Purpose</p>
+
       <div>
-        <p>This about page is for anyone to read!</p>
+
+        <p>International money transfer is an essential source of family
+            and national income and is one of the most significant external
+            financing sources.</p>
+            
+        <p><b>Global Transfer</b> aims to improve the remission of money internationally
+            by providing an unmatched user experience for people worldwide
+            to remit money to their loved ones and business partners securely and instantly at no cost.
+        </p>
+            
+        <p>Connecting you to every part of the world for <b>$0.00!</b></p>
       </div>
-    </div>
+      </Container>
+
   );
 }
 

@@ -19,6 +19,9 @@ const Header = (props) => {
     const dispatch = useDispatch()
     let navigate = useHistory();
 
+    function aboutPage() {
+        navigate.push('/aboutPage')
+    }
 
     function handleSend() {
         navigate.push('/')
@@ -85,6 +88,14 @@ const Header = (props) => {
 
             <Box sx={{ flexGrow: 1 }}>
                 <Grid className='nav-grid' container spacing={2}>
+
+                <Grid className='nav-items' textAlign="center" item xs={3} md={2} >
+                        <li onClick={() => aboutPage()} style={{ cursor: "pointer" }}>
+
+                            About Us
+                        </li>
+                    </Grid>
+
                     <Grid className='nav-items' textAlign="center" item xs={3} md={2} >
                         <li onClick={() => handleSend()} style={{ cursor: "pointer" }}>
 
