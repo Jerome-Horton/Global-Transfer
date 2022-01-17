@@ -9,33 +9,6 @@ const {
 /**
  * GET route template
  */
-// GET route to retrieve transaction by reference number
-// router.get('/', (req, res) => {
-//   // GET route code here
-//   router.get("/sender/:id", (req, res) => {
-//     const reference_number = req.body.reference_number;
-//     const full_name = req.body.full_name;
-//     let query = `select *
-//                         from transactions
-//                         where reference_number = '${reference_number}'`;
-//     // How can I include the full name in the search result?
-//     pool.query(query)
-//       .then((results) => {
-//         res.send(results.rows);
-//       })
-//       .catch((error) => {
-//         console.log('GET route /sender/:id error', error);
-//         res.sendStatus(500);
-//       });
-//   });
-// });
-
-/**
- * POST route template
- */
-// Creation of new transaction, Create Route
-
-
 router.get('/', rejectUnauthenticated, (req, res) => {
   console.log('req.user', req.user);
   let queryText;
@@ -80,9 +53,6 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     })
 });
 
-// WHERE
-//   legal_first_name = 'Tom' AND legal_last_name = 'Tom' AND reference_number  = '420247128'
-
 // Post route to track transaction status
 router.post('/tracking', (req, res) => {
   console.log(req.body)
@@ -102,49 +72,24 @@ router.post('/tracking', (req, res) => {
 });
 
 /**
- * PUT routes
- */
-
-// This for first Edit button - Updating Payment Method
-// router.put("/updatePaymentMethod/:id", (req, res) => {
-//   const transactionId = req.params.id;
-//   let query = `update transactions
-//     set country='${req.body.country}',
-//     payment_option='${req.body.payment_option}',
-//     receiving_method='${req.body.receiving_method}',
-//     amount='${req.body.amount}'
-//          where id = ${transactionId} RETURNING *`;
-//   pool.query(query)
-//     .then((results) => {
-//       res.send(results.rows);
-//     })
-//     .catch((error) => {
-//       console.log('/updatePaymentMethod/:id', error);
-//       res.sendStatus(500);
-//     })
-// });
-
-
-
-
-/**
  * DELETE route
  */
+// Delete a transaction by Id
+router.delete('/:id',rejectUnauthenticated, (req, res) => {
+  console.log('req.params.id', req.params.id);
+  let query = `delete
+        from transactions
+        where "sender_id" = ${req.params.id}`;
+  pool.query(query)
+    .then((results) => {
+      res.send(results.rows);
+    })
+    .catch((error) => {
+      console.log('DELETE /:id', error);
+      res.sendStatus(500);
+    })
+});
 
-// Delete a transaction by Id - during user section
-// router.delete("/:id", (req, res) => {
-//   const transactionId = req.params.id;
-//   let query = `delete
-//         from transactions
-//         where id = ${transactionId}`;
-//   pool.query(query)
-//     .then((results) => {
-//       res.send(results.rows);
-//     })
-//     .catch((error) => {
-//       console.log('DELETE /:id', error);
-//       res.sendStatus(500);
-//     })
-// });
+
 
 module.exports = router;
