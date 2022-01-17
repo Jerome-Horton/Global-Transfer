@@ -60,6 +60,12 @@ function transactionHistory(props) {
                                 </Grid> */}
 
                                 <Grid justifyContent="around" className='transfer-status-grid' container spacing={2}>
+
+                                    <Grid item xs={12} sm={6} >
+                                        <h4 className='transfer-header'>Transaction Date:</h4>
+                                        <p className='transfer-text'>{v.date}</p>
+                                    </Grid> 
+
                                     <Grid item xs={12} sm={6} >
                                         <h4 className='transfer-header'>Receiver Name:</h4>
                                         <p className='transfer-text'>{v.legal_first_name + " " + v.legal_last_name}</p>
@@ -78,8 +84,7 @@ function transactionHistory(props) {
                                         <h4 className='transfer-header'>Receiving Amount:</h4>
                                         <p className='transfer-text'>{v.receiving_amount} {v.currency_name}</p>
                                     </Grid>
-
-
+   
                                 </Grid>
                                 
                                 <button className='delete-btn' onClick={()=> deleteBtn(v.id)} >Delete</button>

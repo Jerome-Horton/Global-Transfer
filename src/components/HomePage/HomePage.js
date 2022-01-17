@@ -119,7 +119,7 @@ function homePage(props) {
 
                     <Grid item xs={3} md={3} >
                         <h4>Money Transfer At Your Finger Tips</h4>
-                        <h4>Send Money Now Starting For $0 Fee*</h4>
+                        <h4>Send Money Now Starting At $0 Fee*</h4>
                         <a className="send-link" onClick={sendNow} >Send Now</a>
 
                     </Grid>
