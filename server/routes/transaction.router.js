@@ -75,7 +75,7 @@ router.post('/tracking', (req, res) => {
  * DELETE route
  */
 // Delete a transaction by Id
-router.delete('/:id',rejectUnauthenticated, (req, res) => {
+router.delete("/:id",rejectUnauthenticated, (req, res) => {
   console.log('req.params.id', req.params.id);
   let query = `delete
         from transactions

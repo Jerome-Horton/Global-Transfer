@@ -6,6 +6,7 @@ import currencySaga from './currency.saga';
 import transactionSaga from './transaction.saga';
 import updateSaga from './editPayment.saga';
 import transactionHistorySaga from './transactionHistory.saga';
+import deleteTransaction from './deleteTransaction.saga';
 
 
 // rootSaga is the primary saga.
@@ -23,6 +24,7 @@ export default function* rootSaga() {
     transactionSaga(),
     currencySaga(),
     updateSaga(),
-    transactionHistorySaga()
+    transactionHistorySaga(),
+    deleteTransaction()
   ])
 }
