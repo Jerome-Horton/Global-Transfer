@@ -90,14 +90,21 @@ function myAccount(props) {
                 </table>
                 <Grid >
                     <form onSubmit={updateInfo}>
-                        
+                        <div style={{margin:0,padding:0}}>
+
+
                         <input className='input' value={card_type} onChange={(e) => setCardType(e.target.value)} placeholder='Card Type'/>
                         <input className='input' value={card_title} onChange={e => setCardTitle(e.target.value)} placeholder='Card Title'/>
                         <input className='input' value={card_number} onChange={e => setCardNumber(e.target.value)} placeholder='Card Number'/>
                         <input className='input' value={cvv} onChange={e => setCvv(e.target.value)} placeholder='CVV'/>
                         <input className='input' value={billing_address} onChange={e => setBillingAddress(e.target.value)} placeholder='Billing Address'/>
                         <input className='input' value={expiration} onChange={e => setExpiration(e.target.value)} placeholder='Expiration Date'/>
-                        <button className='button'>Update </button>
+                        </div>
+
+<div>
+    
+         <button className='button'>Update </button>
+    </div>                   
                        
                     </form>
                 </Grid>

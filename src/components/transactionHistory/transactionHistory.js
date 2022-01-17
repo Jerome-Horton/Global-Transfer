@@ -63,7 +63,7 @@ function transactionHistory(props) {
 
                                     <Grid item xs={12} sm={6} >
                                         <h4 className='transfer-header'>Transaction Date:</h4>
-                                        <p className='transfer-text'>{v.date}</p>
+                                        <p className='transfer-text'>{v.date.toString().slice(0,10)}</p>
                                     </Grid> 
 
                                     <Grid item xs={12} sm={6} >
