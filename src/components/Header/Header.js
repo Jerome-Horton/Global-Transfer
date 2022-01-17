@@ -61,7 +61,7 @@ const Header = (props) => {
                     });
                     navigate.push('/')
                 } else {
-                    swal("You can continue with the payment");
+                    swal("Awesome! Continue with your transaction");
                 }
             });
 

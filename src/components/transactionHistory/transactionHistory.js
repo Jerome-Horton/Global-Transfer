@@ -80,10 +80,10 @@ function transactionHistory(props) {
                                         <h4 className='transfer-header'>Sent Amount:</h4>
                                         <p className='transfer-text'>{v.sent_amount} USD</p>
                                     </Grid>
-                                    <Grid item xs={12} sm={6} >
+                                    {/* <Grid item xs={12} sm={6} >
                                         <h4 className='transfer-header'>Receiving Amount:</h4>
                                         <p className='transfer-text'>{v.receiving_amount} {v.currency_name}</p>
-                                    </Grid>
+                                    </Grid> */}
    
                                 </Grid>
                                 
