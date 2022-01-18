@@ -22,7 +22,7 @@ function AboutPage() {
             
         <p><b>Global Transfer</b> aims to improve the remission of money internationally
             by providing an unmatched user experience for people worldwide
-            to remit money to their loved ones and business partners securely and instantly at no cost.
+            to remit money to their loved ones and business partners securely and instantly.
         </p>
             
         <p>Connecting you to every part of the world for <b>$0.00!</b></p>

@@ -1,5 +1,5 @@
-import React,{useState} from 'react';
-import {useSelector,useDispatch} from 'react-redux'
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router';
 import './TransferPage.css';
 
@@ -46,43 +46,43 @@ function Started(props) {
     }
 
     function getStarted() {
-        if (!user.id){
+        if (!user.id) {
             navigate.push('/login')
-          }
-          else{
-          navigate.push('/receiver-info')
-          }
+        }
+        else {
+            navigate.push('/receiver-info')
+        }
     }
 
 
 
-    const onChangeTransactionAmount = (e)=> {
+    const onChangeTransactionAmount = (e) => {
 
 
         const totalAmount = e.target.value
-        const convertedValue = totalAmount * transaction.conversionRate 
-    
+        const convertedValue = totalAmount * transaction.conversionRate
+
         dispatch({
-          type : 'CHANGE_TRANSACTION_AMOUNT',
-          payload : { totalAmount , convertedValue }
+            type: 'CHANGE_TRANSACTION_AMOUNT',
+            payload: { totalAmount, convertedValue }
         })
-        
-    
-      }
+
+
+    }
 
     const onChangeConvertedAmount = (e) => {
 
 
-        const convertedValue = e.target.value 
+        const convertedValue = e.target.value
         const totalAmount = convertedValue / transaction.conversionRate
-    
-    
+
+
         dispatch({
-          type : 'CHANGE_TRANSACTION_AMOUNT',
-          payload : { convertedValue , totalAmount }
+            type: 'CHANGE_TRANSACTION_AMOUNT',
+            payload: { convertedValue, totalAmount }
         })
-    
-      }
+
+    }
 
     return (
         <div >
@@ -110,7 +110,7 @@ function Started(props) {
                                             <Grid className='nav-grid' container spacing={2}>
                                                 <Grid item xs={6} md={6} >
 
-                                                    <input className='two-inputs' value = {transaction.amount} onChange = {onChangeTransactionAmount} 
+                                                    <input className='two-inputs' value={transaction.amount} onChange={onChangeTransactionAmount}
                                                     /><span className='usd-name-exchange'>USD <img width="30px" src={USFlag} /></span>
                                                     <div className='radio-payment'>
                                                         Payment Option
@@ -130,13 +130,13 @@ function Started(props) {
                                                 </Grid>
                                                 <Grid item xs={6} md={6}>
 
-                                                    <input className='two-inputs' value={transaction.convertedValue} 
-                                                        onChange = {onChangeConvertedAmount}/>
-                                                        <span className='usd-name-exchange'> {transaction.selectCountryShortName?.toUpperCase()} 
+                                                    <input className='two-inputs' value={transaction.convertedValue}
+                                                        onChange={onChangeConvertedAmount} />
+                                                    <span className='usd-name-exchange'> {transaction.selectCountryShortName?.toUpperCase()}
                                                         <img width="30px" src={`/images/${transaction.selectCountryShortName}.png`}
-                                                        style={{verticalAlign:"top", marginLeft:"0.5rem"}}/></span>
+                                                            style={{ verticalAlign: "top", marginLeft: "0.5rem" }} /></span>
 
-                                                        <div className='radio-payment'>Select Receiving Method</div>
+                                                    <div className='radio-payment'>Select Receiving Method</div>
 
                                                     <RadioGroup
                                                         aria-label="receiving"
@@ -152,7 +152,7 @@ function Started(props) {
                                             </Grid>
                                             <p className='money-note'>Money Available by: {moment().format('MMMM Do YYYY')} </p>
                                             <Button className='get-started-btn' onClick={() => getStarted()} variant="contained">
-                                            {user.id ? "Get Started" : "Sign Up/Login to get started"}
+                                                {user.id ? "Get Started" : "Sign Up/Login to get started"}
                                             </Button>
 
                                         </Box>

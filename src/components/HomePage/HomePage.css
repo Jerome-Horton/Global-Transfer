@@ -1,6 +1,6 @@
 .white-container-track{
     background-color: white;
-    min-width: 59% !important;
+    width: 60% !important;
     margin-top: 30px;
     min-height: 60vh;
     text-align: center;
@@ -86,7 +86,7 @@
 
 .MuiTabs-indicator {
     display: none;
-  }
+}
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
     font-weight: 600 !important;

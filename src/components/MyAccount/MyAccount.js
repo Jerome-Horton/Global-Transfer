@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 import Table from '@mui/material/Table';
@@ -9,7 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {Grid} from '@mui/material';
+import { Grid } from '@mui/material';
 import Container from '@mui/material/Container';
 
 import './MyAccount.css';
@@ -17,7 +17,7 @@ import './MyAccount.css';
 function myAccount(props) {
 
     const dispatch = useDispatch()
-    // let navigate = useHistory();
+
 
 
     const user = useSelector(store => store.user);
@@ -51,11 +51,11 @@ function myAccount(props) {
             type: "FETCH_USER"
         })
         setCardType(""),
-        setCardTitle(""),
-        setCardNumber(""),
-        setCvv(""),
-        setBillingAddress(""),
-        setExpiration("");
+            setCardTitle(""),
+            setCardNumber(""),
+            setCvv(""),
+            setBillingAddress(""),
+            setExpiration("");
     }
 
 
@@ -83,29 +83,29 @@ function myAccount(props) {
                             <td>{user?.card_number}</td>
                             <td>{user?.cvv}</td>
                             {/* billing address not showing up */}
-                            <td>{user?.billing_address}</td> 
+                            <td>{user?.billing_address}</td>
                             <td>{user?.expiration}</td>
                         </tr>
                     </tbody>
                 </table>
                 <Grid >
                     <form onSubmit={updateInfo}>
-                        <div style={{margin:0,padding:0}}>
+                        <div style={{ margin: 0, padding: 0 }}>
 
 
-                        <input className='input' value={card_type} onChange={(e) => setCardType(e.target.value)} placeholder='Card Type'/>
-                        <input className='input' value={card_title} onChange={e => setCardTitle(e.target.value)} placeholder='Card Title'/>
-                        <input className='input' value={card_number} onChange={e => setCardNumber(e.target.value)} placeholder='Card Number'/>
-                        <input className='input' value={cvv} onChange={e => setCvv(e.target.value)} placeholder='CVV'/>
-                        <input className='input' value={billing_address} onChange={e => setBillingAddress(e.target.value)} placeholder='Billing Address'/>
-                        <input className='input' value={expiration} onChange={e => setExpiration(e.target.value)} placeholder='Expiration Date'/>
+                            <input className='input' value={card_type} onChange={(e) => setCardType(e.target.value)} placeholder='Card Type' />
+                            <input className='input' value={card_title} onChange={e => setCardTitle(e.target.value)} placeholder='Card Title' />
+                            <input className='input' value={card_number} onChange={e => setCardNumber(e.target.value)} placeholder='Card Number' />
+                            <input className='input' value={cvv} onChange={e => setCvv(e.target.value)} placeholder='CVV' />
+                            <input className='input' value={billing_address} onChange={e => setBillingAddress(e.target.value)} placeholder='Billing Address' />
+                            <input className='input' value={expiration} onChange={e => setExpiration(e.target.value)} placeholder='Expiration Date' />
                         </div>
 
-<div>
-    
-         <button className='button'>Update </button>
-    </div>                   
-                       
+                        <div>
+
+                            <button className='button'>Update </button>
+                        </div>
+
                     </form>
                 </Grid>
             </Container>

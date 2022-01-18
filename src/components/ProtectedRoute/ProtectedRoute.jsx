@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 
 // A Custom Wrapper Component -- This will keep our code DRY.
 // Responsible for watching redux state, and returning an appropriate component
@@ -33,7 +33,7 @@ function ProtectedRoute({ component, children, ...props }) {
         :
         // Otherwise, redirect to the Loginpage
         // <LoginPage />
-       <HomePage />
+        <HomePage />
       }
     </Route>
 

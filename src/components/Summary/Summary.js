@@ -117,13 +117,13 @@ function Summary(props) {
 
                     <Grid item xs={6} md={4} >
                         <Button className='summary-btn' variant="contained" onClick={handleDelete} >
-                            Delete
+                            Cancel
                         </Button>
 
                     </Grid>
                     <Grid item xs={12} md={4} >
                         <Button className='summary-btn' onClick={() => transactionConfirmation()} variant="contained">
-                            Next
+                            Submit
                         </Button>
 
                     </Grid>
