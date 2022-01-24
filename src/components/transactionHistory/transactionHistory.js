@@ -18,17 +18,16 @@ function transactionHistory(props) {
     const transaction = useSelector(store => store?.transactionHistory);
     // const receiver = useSelector(store => store.userInfo);
     const dispatch = useDispatch();
-
+    const [change,setChange] = useState(false);
 
     // call that function in useEffect with empty 
 
     useEffect(() => {
 
         dispatch({ type: 'GET_TRANSACTIONS' });
-
-
-
-    }, [])
+        
+        
+    }, [change])
 
     const deleteBtn = (id) => {
         console.log('here is id',id);
@@ -36,6 +35,7 @@ function transactionHistory(props) {
         dispatch({ type: 'GET_TRANSACTIONS'});
         dispatch({ type: 'DELETE_TRANSACTION', payload:{id:id}  });
 
+        setChange(prev=>!prev);
 
     }
 
@@ -45,12 +45,12 @@ function transactionHistory(props) {
 
             <Container className='white-container-transfer' maxWidth="xl">
 
-                <p className='transfer-status'>Transfer History</p>
+                <p className='transfer-status'>Transfers</p>
 
                 {transaction.length ? transaction.map((v, index) => {
 
                     return (
-                        <Container key={index}>
+                        <Container key={index} style={{marginBottom:20}}>
 
 
                             <Grid justifyContent="around" className='transfer-status-grid' container spacing={2}>

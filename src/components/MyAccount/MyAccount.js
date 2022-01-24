@@ -94,7 +94,7 @@ function myAccount(props) {
 
 
                             <input className='input' value={card_type} onChange={(e) => setCardType(e.target.value)} placeholder='Card Type' />
-                            <input className='input' value={card_title} onChange={e => setCardTitle(e.target.value)} placeholder='Card Title' />
+                            <input className='input' value={card_title} onChange={e => setCardTitle(e.target.value)} placeholder='Name On Card' />
                             <input className='input' value={card_number} onChange={e => setCardNumber(e.target.value)} placeholder='Card Number' />
                             <input className='input' value={cvv} onChange={e => setCvv(e.target.value)} placeholder='CVV' />
                             <input className='input' value={billing_address} onChange={e => setBillingAddress(e.target.value)} placeholder='Billing Address' />
