@@ -167,7 +167,7 @@ function homePage(props) {
                                         {/* <input className="input-field" placeholder='Receiver Country' /> */}
 
                                         <Button className='estimate-btn' onClick={() => estimateFees()} variant="contained"
-                                            disabled={!amount && !selectCountry}> Estimate Fees</Button>
+                                            disabled={!amount && !selectCountry}> Estimate Fee</Button>
                                     </TabPanel>
 
                                     <TabPanel value="2" className="tabs-each">

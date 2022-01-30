@@ -19,14 +19,15 @@
 
 .white-container-transfer{
     background-color: white;
-    width: 85% !important;
-    margin-top: 30px;
+    width: 60% !important;
+    margin-top: 40px;
     height: auto;
     padding: 5px;
     padding-bottom: 20px;
     margin-bottom: 20px;
     padding-bottom: 60px;
     text-align: center;
+
 }
 .success{
     font-size: 80px;
@@ -45,10 +46,10 @@
 }
 
 .home-btn{
-    float: right;
+    float:right;
     font-weight: 600 !important;
     background-color: #EB1E1D !important;
-    margin-top: 40px !important;
+    /* margin-top: 0px !important; */
     font-size: 35px !important;
 }
 
