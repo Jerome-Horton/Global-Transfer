@@ -2,6 +2,7 @@
 .DS_Store
 .DS_STORE/
 
+
 # Build directories for Front-End Assets
 build/
 
@@ -66,3 +67,6 @@ typings/
 
 # ignore package-lock as it complicates merging
 package-lock.json
+
+# ignore database.sql
+database.sql
