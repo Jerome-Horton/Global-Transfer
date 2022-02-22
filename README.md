@@ -98,7 +98,7 @@ Before you get started, this application require these technologies to run succe
 
 ## Usage
 
-Please watch my presentation of Global Transfer 
+To watch my presentation of Global Transfer 
 
 - [Click Here](https://www.linkedin.com/posts/jerome-d-horton_last-week-i-presented-my-full-stack-solo-ugcPost-6892186950954991616-PmBI)
 
