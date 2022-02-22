@@ -47,7 +47,7 @@ A user will have the option to update their payment and contact details in the M
 
 <img width="1234" alt="Screen Shot 2022-02-22 at 1 38 20 AM" src="https://user-images.githubusercontent.com/86622680/155089078-af85a028-9501-4b41-ad29-98cb0d4d25dc.png">
 
-#### Transfer(s) History View
+#### Transaction(s) History View
 
 <img width="1234" alt="Screen Shot 2022-02-22 at 1 39 45 AM" src="https://user-images.githubusercontent.com/86622680/155089175-6c4b4ab1-87b6-4398-b136-cab808ff19ea.png">
 
