@@ -61,7 +61,7 @@ A user will have the option to update their payment and contact details in the M
 
 #### Transfer Review View
 
-<img width="1243" alt="Screen Shot 2022-02-22 at 1 43 06 AM" src="https://user-images.githubusercontent.com/86622680/155089798-f104c0df-f561-4e8a-913c-fa8fc0794d81.png">
+<img width="1209" alt="Screen Shot 2022-02-22 at 2 24 16 AM" src="https://user-images.githubusercontent.com/86622680/155091953-63c58c5b-7395-4d55-8fc7-7420bda000c1.png">
 
 #### Tranfer Completion View
 
