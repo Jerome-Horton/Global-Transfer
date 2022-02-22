@@ -98,9 +98,10 @@ Before you get started, this application require these technologies to run succe
 
 ## Usage
 
-Please watch my presentation presentation of Global Transfer 
+Please watch my presentation of Global Transfer 
 
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6892186950954991616?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+- [Click Here](https://www.linkedin.com/posts/jerome-d-horton_last-week-i-presented-my-full-stack-solo-ugcPost-6892186950954991616-PmBI)
+
 
 ## Acknowledgements
 Thanks to [Prime Digital Academy](www.primeacademy.io), who equipped and helped me make this application a reality. Thank you to my family and friends for their undying support.
